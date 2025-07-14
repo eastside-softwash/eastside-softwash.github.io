@@ -64,7 +64,8 @@
     .services h2,
     .process h2,
     .contact h2,
-    .mission h2 {
+    .mission h2,
+    .donation-counter h2 {
       text-align: center;
       margin-bottom: 1rem;
     }
@@ -119,10 +120,39 @@
       text-align: center;
       font-size: 1.1rem;
     }
+    .donation-counter {
+      text-align: center;
+      font-size: 1.5rem;
+      padding: 2rem;
+      color: #0f0;
+      background: #111;
+    }
+    .donation-counter span {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #28a745;
+    }
     footer p {
       font-size: 0.9rem;
     }
   </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const counter = document.getElementById("donationAmount");
+      let value = 0;
+      const goal = 4283; // example total
+      const duration = 2000;
+      const step = goal / (duration / 50);
+      const interval = setInterval(() => {
+        value += step;
+        if (value >= goal) {
+          value = goal;
+          clearInterval(interval);
+        }
+        counter.textContent = `$${value.toFixed(2)}`;
+      }, 50);
+    });
+  </script>
 </head>
 <body>
 
@@ -151,6 +181,11 @@
     We are industry leaders in customer satisfaction and ethical business practices. Our mission is to be of service
     to our customers and our community.
   </p>
+</section>
+
+<section class="donation-counter">
+  <h2>Total Donated to Local Animal Shelters</h2>
+  <p><span id="donationAmount">$0.00</span></p>
 </section>
 
 <section class="hero">
