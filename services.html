@@ -7,9 +7,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #5c8a8a;        /* Muted sea blue */
-      --secondary: #ccd1d1;      /* Cool neutral grey */
-      --accent: #ffc89b;         /* Peachy orange */
+      --primary: #5c8a8a;
+      --secondary: #ccd1d1;
+      --accent: #ffc89b;
       --accent-dark: #e3a86e;
       --accent-light: #ffdbba;
       --dark: #0f1a2b;
@@ -23,7 +23,7 @@
 
     body {
       font-family: 'Roboto', sans-serif;
-      background: var(--dark) url('https://www.transparenttextures.com/patterns/concrete-wall.png');
+      background: url('https://www.transparenttextures.com/patterns/concrete-wall.png') repeat #ccd1d1;
       color: var(--text-light);
       margin: 0;
       padding: 0;
@@ -96,21 +96,22 @@
 
     .services-box h2 {
       text-align: center;
-      margin-bottom: 2rem;
       font-size: 2.5rem;
       color: var(--accent);
+      margin-bottom: 2rem;
     }
 
     .services-box ul {
       list-style: none;
       padding: 0;
+      margin: 0;
       font-size: 1.2rem;
-      color: var(--text-light);
     }
 
     .services-box li {
-      padding: 0.75rem 0;
+      padding: 1rem 0;
       border-bottom: 1px solid #444;
+      color: var(--text-light);
     }
 
     footer {
