@@ -6,20 +6,36 @@
   <title>Eastside Softwash</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary: #5c8a8a;        /* Muted sea blue */
+      --secondary: #ccd1d1;      /* Cool neutral grey */
+      --accent: #ffc89b;         /* Peachy orange */
+      --accent-dark: #e3a86e;
+      --accent-light: #ffdbba;
+      --dark: #0f1a2b;
+      --light-bg: #1b2c47;
+      --text-light: #f0f0f0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Roboto', sans-serif;
-      background: #0f1a2b;
-      color: #f0f0f0;
+      background: var(--dark);
+      color: var(--text-light);
       margin: 0;
       padding: 0;
     }
 
     .donation-bar {
-      background: #333;
-      color: white;
+      background: linear-gradient(to right, var(--accent-light), var(--accent), var(--accent-dark));
+      color: #111;
       padding: 0.5rem 2rem;
       text-align: center;
       font-size: 1rem;
+      font-weight: bold;
     }
 
     .progress-container {
@@ -31,14 +47,14 @@
     }
 
     .progress-bar {
-      background: #28a745;
+      background: linear-gradient(to right, var(--accent-light), var(--accent), var(--accent-dark));
       height: 100%;
       width: 0%;
       transition: width 0.3s ease-in-out;
     }
 
     header {
-      background: #1e90ff;
+      background: linear-gradient(to right, #7aa9a9, var(--primary));
       padding: 1.5rem 3rem;
       display: flex;
       justify-content: space-between;
@@ -66,13 +82,20 @@
     }
 
     nav a:hover {
-      color: #d0d0ff;
+      color: var(--accent-light);
+    }
+
+    .active-link {
+      display: none;
     }
 
     main {
-      padding: 4rem 2rem;
       max-width: 600px;
-      margin: auto;
+      margin: 4rem auto;
+      padding: 2rem;
+      background: var(--light-bg);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
     }
 
     h2 {
@@ -81,9 +104,6 @@
     }
 
     form {
-      background: #1b2c47;
-      padding: 2rem;
-      border-radius: 10px;
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
@@ -99,14 +119,20 @@
     }
 
     button {
-      background: #28a745;
-      color: white;
+      background: linear-gradient(to right, var(--accent-light), var(--accent));
+      color: #111;
       padding: 1rem;
       border: none;
       border-radius: 5px;
       font-weight: bold;
       cursor: pointer;
       font-size: 1rem;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: var(--accent-dark);
+      color: #fff;
     }
 
     footer {
@@ -114,13 +140,22 @@
       text-align: center;
       padding: 2rem;
       font-size: 1rem;
-      color: #ccc;
+      color: var(--secondary);
+    }
+
+    @media (max-width: 600px) {
+      header, footer {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav {
+        justify-content: center;
+      }
     }
   </style>
 </head>
 <body>
-
-  <!-- DONATION BAR -->
   <div class="donation-bar">
     💰 Donations Raised: $0 / $100
     <div class="progress-container">
@@ -131,9 +166,10 @@
   <header>
     <div class="logo-text">Eastside Softwash</div>
     <nav>
-      <a href="about.html">About Us</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html">Contact</a>
+      <a href="about.html" class="about-link">About Us</a>
+      <a href="services.html" class="services-link">Services</a>
+      <a href="contact.html" class="contact-link">Contact</a>
+      <a href="donation.html" class="donation-link">Donations</a>
     </nav>
   </header>
 
@@ -152,5 +188,13 @@
   <footer>
     <p>&copy; 2025 Eastside Softwash | Built for results, backed by trust.</p>
   </footer>
+
+  <script>
+    const path = window.location.pathname;
+    if (path.includes("about")) document.querySelector(".about-link").classList.add("active-link");
+    if (path.includes("services")) document.querySelector(".services-link").classList.add("active-link");
+    if (path.includes("contact")) document.querySelector(".contact-link").classList.add("active-link");
+    if (path.includes("donation")) document.querySelector(".donation-link").classList.add("active-link");
+  </script>
 </body>
 </html>
