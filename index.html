@@ -207,23 +207,35 @@
 
 <section id="contact" class="contact">
   <h2>Contact Us Today!</h2>
-  <form action="https://formsubmit.co/eastsidesoftscrub@gmail.com" method="POST" autocomplete="off">
-    <input type="text" name="name" placeholder="Name*" required>
-    <input type="tel" name="phone" placeholder="Phone*" required>
+  <form action="https://formsubmit.co/eastsidesoftscrub@gmail.com" method="POST" autocomplete="off"
+        style="display: flex; flex-direction: column; align-items: center; background: #111; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);">
 
-    <!-- Honeypot spam trap -->
+    <!-- Name Field -->
+    <input type="text" name="name" placeholder="Name*" required
+           style="width: 90%; max-width: 500px; margin: 10px 0; padding: 12px; border-radius: 5px; background: #222; color: white; border: 1px solid #ccc;">
+
+    <!-- Phone Field -->
+    <input type="tel" name="phone" placeholder="Phone*" required
+           style="width: 90%; max-width: 500px; margin: 10px 0; padding: 12px; border-radius: 5px; background: #222; color: white; border: 1px solid #ccc;">
+
+    <!-- Honeypot anti-spam -->
     <input type="text" name="_honey" style="display:none">
 
     <!-- Disable CAPTCHA -->
     <input type="hidden" name="_captcha" value="false">
 
-    <!-- Redirect after submit -->
+    <!-- Redirect URL -->
     <input type="hidden" name="_next" value="https://eastside-softwash.com/thankyou.html">
 
-    <button type="submit">Send Message</button>
+    <!-- Submit Button -->
+    <button type="submit"
+            style="background: #28a745; color: white; padding: 12px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; margin-top: 20px; width: 200px;">
+      Send Message
+    </button>
   </form>
   <p>Call or Text: </p>
 </section>
+
 
 
 <footer>
