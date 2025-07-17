@@ -7,9 +7,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #5c8a8a;        /* Muted sea blue */
-      --secondary: #ccd1d1;      /* Cool neutral grey */
-      --accent: #ffc89b;         /* Peachy orange */
+      --primary: #5c8a8a;
+      --secondary: #ccd1d1;
+      --accent: #ffc89b;
       --accent-dark: #e3a86e;
       --accent-light: #ffdbba;
       --dark: #0f1a2b;
@@ -23,10 +23,35 @@
 
     body {
       font-family: 'Roboto', sans-serif;
-      background: var(--dark) url('https://www.transparenttextures.com/patterns/concrete-wall.png');
+      background: url('https://www.transparenttextures.com/patterns/concrete-wall.png') repeat #ccd1d1;
       color: var(--text-light);
       line-height: 1.6;
       margin: 0;
+      padding: 0;
+    }
+
+    .donation-bar {
+      background: linear-gradient(to right, var(--accent-light), var(--accent), var(--accent-dark));
+      color: #111;
+      padding: 0.5rem 2rem;
+      text-align: center;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    .progress-container {
+      background: #222;
+      height: 20px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 0.5rem;
+    }
+
+    .progress-bar {
+      background: linear-gradient(to right, var(--accent-light), var(--accent), var(--accent-dark));
+      height: 100%;
+      width: 0%;
+      transition: width 0.3s ease-in-out;
     }
 
     header {
@@ -36,7 +61,6 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      color: white;
     }
 
     .logo-text {
@@ -70,7 +94,7 @@
       max-width: 900px;
       margin: auto;
       padding: 3rem 2rem;
-      background: var(--light-bg);
+      background: rgba(27, 44, 71, 0.9);
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.3);
     }
@@ -109,6 +133,13 @@
   </style>
 </head>
 <body>
+  <div class="donation-bar">
+    💰 Donations Raised: $0 / $1000
+    <div class="progress-container">
+      <div class="progress-bar" style="width: 0%;"></div>
+    </div>
+  </div>
+
   <header>
     <div class="logo-text">Eastside Softwash</div>
     <nav>
