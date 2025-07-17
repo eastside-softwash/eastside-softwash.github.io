@@ -101,13 +101,15 @@
       text-decoration: none;
       font-weight: bold;
     }
-    form {
+    .contact-form-wrapper {
       max-width: 600px;
       margin: 2rem auto;
       padding: 2rem;
       background: #1b2c47;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    form {
       display: flex;
       flex-direction: column;
     }
@@ -141,16 +143,19 @@
     </nav>
   </header>
 
-  <form action="https://formsubmit.co/eastsidesoftscrub@gmail.com" method="POST">
-    <input type="text" name="name" placeholder="Name*" required>
-    <input type="tel" name="phone" placeholder="Phone*" required>
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="https://eastside-softwash.com/thankyou.html">
-    <button type="submit">Send Message</button>
-  </form>
+  <section class="contact-form-wrapper">
+    <form action="https://formsubmit.co/eastsidesoftscrub@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="Name*" required>
+      <input type="tel" name="phone" placeholder="Phone*" required>
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://eastside-softwash.com/thankyou.html">
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
 
   <footer>
     <p>&copy; 2025 Eastside Softwash</p>
   </footer>
 </body>
 </html>
+
