@@ -2,257 +2,170 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Eastside Softwash</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-        rel="stylesheet"
-        crossorigin="anonymous">
-
-  <!-- Content Security Policy -->
-  <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:; object-src 'none';">
-
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Roboto', sans-serif;
+    :root {
+      --primary-color: #1e90ff;
+      --accent-color: #28a745;
+      --background-dark: #0f1a2b;
+      --card-bg: #1b2c47;
+      --text-light: #f0f0f0;
+    }
+
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: var(--background-dark);
+      color: var(--text-light);
       line-height: 1.6;
-      color: #eee;
-      background: linear-gradient(to bottom right, #000000, #002244);
     }
-    header, footer {
-      background: #111;
-      color: white;
-      text-align: center;
-      padding: 1rem;
+
+    header {
+      background: var(--primary-color);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     }
-    nav a {
-      color: white;
-      margin: 0 10px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+
     .logo {
-      width: 140px;
-      height: auto;
-      display: block;
-      margin: 0 auto 10px;
+      height: 60px;
       border-radius: 10px;
     }
-    .hero {
-      background: linear-gradient(to bottom, #003366, #0055aa);
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
       color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #d0d0ff;
+    }
+
+    .hero {
+      background: linear-gradient(to bottom, #1b3a5f, #0f1a2b);
       text-align: center;
       padding: 4rem 2rem;
-      border-bottom: 5px solid #28a745;
     }
+
     .hero h2 {
       font-size: 2.5rem;
       margin-bottom: 0.5rem;
     }
+
     .hero p {
       font-size: 1.2rem;
       margin-bottom: 1.5rem;
     }
+
     .hero a {
-      background: #28a745;
+      background: var(--accent-color);
       color: white;
       padding: 0.75rem 1.5rem;
       text-decoration: none;
       border-radius: 5px;
       font-weight: bold;
     }
+
     section {
       padding: 2rem;
       max-width: 1000px;
       margin: auto;
     }
-    .services h2,
-    .process h2,
-    .contact h2,
-    .mission h2,
-    .donation-counter h2 {
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-    .services .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-    .gallery img {
-      width: 100%;
-      border-radius: 12px;
-      border: 4px solid #004080;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-      transition: transform 0.3s ease;
-    }
-    .gallery img:hover {
-      transform: scale(1.03);
-    }
-    .contact form {
-      background: #111;
+
+    .contact-form {
+      background: var(--card-bg);
       padding: 2rem;
       border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     }
-    .contact form input {
-      width: 90%;
-      max-width: 500px;
-      margin: 10px 0;
+
+    .contact-form input,
+    .contact-form button {
+      width: 100%;
       padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      background: #222;
-      color: white;
-      font-size: 1rem;
-    }
-    .contact form button {
-      background: #28a745;
-      color: white;
-      padding: 12px 20px;
+      margin: 10px 0;
       border: none;
       border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .contact-form input {
+      background: #2e4060;
+      color: white;
+    }
+
+    .contact-form button {
+      background: var(--accent-color);
+      color: white;
+      font-weight: bold;
       cursor: pointer;
-      font-weight: bold;
-      margin-top: 20px;
-      width: 200px;
     }
-    .mission p {
-      text-align: center;
-      font-size: 1.1rem;
-    }
-    .donation-counter {
-      text-align: center;
-      font-size: 1.5rem;
-      padding: 2rem;
-      color: #0f0;
+
+    footer {
       background: #111;
-    }
-    .donation-counter span {
-      font-size: 2rem;
-      font-weight: bold;
-      color: #28a745;
-    }
-    footer p {
+      text-align: center;
+      padding: 1rem;
       font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    .services ul {
+      list-style-type: square;
+      padding-left: 2rem;
     }
   </style>
 </head>
 <body>
+  <header>
+    <img src="images/logo.webp" alt="Eastside Softwash Logo" class="logo">
+    <nav>
+      <a href="#about">About Us</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<header>
-  <img src="images/logo.webp" alt="Eastside Softwash Logo" class="logo" />
-  <h1>Eastside Softwash</h1>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#services">Services</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#reviews">Reviews</a>
-    <a href="#about">About Us</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <p>Call or Text: </p>
-</header>
+  <section class="hero">
+    <h2>INCREASE YOUR CURB APPEAL TODAY!</h2>
+    <p>Professional and Reliable Pressure and Soft Washing Services</p>
+    <a href="#contact">CLICK HERE! For A Free Quote</a>
+  </section>
 
-<section class="mission" id="about">
-  <h2>About Us</h2>
-  <p>
-    We proudly serve Redmond and the surrounding area, delivering real, visible results through affordable power washing services.
-    We also give back — 5% of all profit is donated to local animal shelters, and we provide proof of donation to every client.
-  </p>
-  <p>
-    We are industry leaders in customer satisfaction and ethical business practices. Our mission is to be of service to our customers and our community.
-  </p>
-  <p>
-    We are an owner operated exterior cleaning company with a mission to give the best quality service to our customers and give back to the communities and help make them a better place one job at a time. After every service you will receive an email with our donation to local charities as a part of our service.
-  </p>
-</section>
+  <section id="about">
+    <h2 style="text-align:center; margin-bottom:1rem;">About Us</h2>
+    <p style="text-align:center;">We proudly serve Redmond and the surrounding area, delivering real, visible results through affordable power washing services. We also give back — 5% of all profit is donated to local animal shelters, and we provide proof of donation to every client. Our mission is to serve our community with transparency and excellence.</p>
+  </section>
 
-<section class="donation-counter">
-  <h2>Total Donated to Local Animal Shelters</h2>
-  <p><span id="donationAmount">$0.00</span></p>
-</section>
+  <section id="services" class="services">
+    <h2 style="text-align:center; margin-bottom:1rem;">Our Services</h2>
+    <ul>
+      <li>Pressure Washing</li>
+      <li>Soft Washing</li>
+      <li>Gutter Cleaning</li>
+      <li>Window Cleaning</li>
+    </ul>
+  </section>
 
-<section class="hero">
-  <h2>INCREASE YOUR CURB APPEAL TODAY!</h2>
-  <p>Professional and Reliable Pressure and Soft Washing Services</p>
-  <a href="#contact">CLICK HERE! For A Free Quote</a>
-</section>
-
-<section id="services" class="services">
-  <h2>Our Work in Action</h2>
-  <div class="gallery">
-    <img src="images/1.webp" alt="Project photo 1" />
-    <img src="images/2.webp" alt="Project photo 2" />
-    <img src="images/3.jpg" alt="Project photo 3" />
-  </div>
-</section>
-
-<section class="process">
-  <h2>Simple Quote Process</h2>
-  <ol>
-    <li>Call us for an instant quote</li>
-    <li>Free site visit for larger jobs</li>
-    <li>Schedule service once approved</li>
-  </ol>
-</section>
-
-<section id="contact" class="contact">
-  <h2>Contact Us Today!</h2>
-  <form action="https://formsubmit.co/eastsidesoftscrub@gmail.com" method="POST" autocomplete="off"
-        style="display: flex; flex-direction: column; align-items: center; background: #111; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);">
-
-    <!-- Name Field -->
-    <input type="text" name="name" placeholder="Name*" required
-           style="width: 90%; max-width: 500px; margin: 10px 0; padding: 12px; border-radius: 5px; background: #222; color: white; border: 1px solid #ccc;">
-
-    <!-- Phone Field -->
-    <input type="tel" name="phone" placeholder="Phone*" required
-           style="width: 90%; max-width: 500px; margin: 10px 0; padding: 12px; border-radius: 5px; background: #222; color: white; border: 1px solid #ccc;">
-
-    <!-- Honeypot anti-spam -->
-    <input type="text" name="_honey" style="display:none">
-
-    <!-- Disable CAPTCHA -->
-    <input type="hidden" name="_captcha" value="false">
-
-    <!-- Redirect URL -->
-    <input type="hidden" name="_next" value="https://eastside-softwash.com/thankyou.html">
-
-    <!-- Submit Button -->
-    <button type="submit"
-            style="background: #28a745; color: white; padding: 12px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; margin-top: 20px; width: 200px;">
-      Send Message
-    </button>
-  </form>
-  <p>Call or Text: </p>
-</section>
-
-
-
-<footer>
-  <p>&copy; 2025 Eastside Softwash | Built for results, backed by trust.</p>
-</footer>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const counter = document.getElementById("donationAmount");
-    let value = 0;
-    const goal = 0;
-    const duration = 2000;
-    const step = goal / (duration / 50);
-    const interval = setInterval(() => {
-      value += step;
-      if (value >= goal) {
-        value = goal;
-        clearInterval(interval);
-      }
-      counter.textContent = `$${value.t
+  <section id="contact">
+    <h2 style="text-align:center; margin-bottom:1rem;">Contact Us Today!</h2>
+    <form action="https://formsubmit.co/eastsidesoftscrub@gmail.com" method="POST" class="contact-form">
+      <input type="text" name="name" placeholder="Name*" required>
+      <input type="tel" name="phone" placeholder="Phone*" required>
+      <input type="text" name="_honey" style="display:none">
+      <input type="hidden" name="_captcha" value="false">
