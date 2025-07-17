@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us - Eastside Softwash</title>
+  <title>Home - Eastside Softwash</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -87,45 +87,39 @@
       text-decoration: underline;
     }
 
-    .contact-form-wrapper {
-      max-width: 600px;
-      margin: 4rem auto;
-      padding: 2rem;
-      background: rgba(27, 44, 71, 0.9);
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    .hero {
+      padding: 6rem 2rem;
+      text-align: center;
+      background: rgba(15, 26, 43, 0.85);
+      color: var(--text-light);
     }
 
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
     }
 
-    form input {
-      padding: 0.75rem;
-      border-radius: 5px;
-      background: rgba(34, 34, 34, 0.9);
-      border: 1px solid var(--secondary);
-      color: white;
-      font-size: 1rem;
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto 2rem auto;
     }
 
-    form button {
+    .hero a {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 1rem 2rem;
       background: linear-gradient(to right, var(--accent-light), var(--accent));
       color: #111;
-      padding: 1rem;
-      border: none;
-      border-radius: 5px;
       font-weight: bold;
-      cursor: pointer;
-      font-size: 1rem;
+      border-radius: 5px;
+      text-decoration: none;
       transition: background 0.3s;
     }
 
-    form button:hover {
+    .hero a:hover {
       background: var(--accent-dark);
-      color: #fff;
+      color: white;
     }
 
     footer {
@@ -145,6 +139,14 @@
       nav {
         justify-content: center;
         margin-top: 1rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
       }
     }
   </style>
@@ -166,4 +168,34 @@
       <a href="contact.html" class="contact-link">Contact</a>
       <a href="donation.html" class="donation-link">Donations</a>
     </nav>
+  </header>
+
+  <section class="hero">
+    <h1>We Keep the Northwest Clean</h1>
+    <p>Eastside Softwash is an owner-operated exterior cleaning service dedicated to top-tier quality and community impact. We specialize in pressure washing, soft washing, roof & gutter cleaning — and donate 5% of every job to local animal shelters.</p>
+    <a href="contact.html">Get a Free Estimate</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Eastside Softwash | Built for results, backed by trust.</p>
+  </footer>
+
+  <script>
+    // Highlight active nav
+    const path = window.location.pathname;
+    if (path.includes("about")) document.querySelector(".about-link")?.classList.add("active-link");
+    if (path.includes("services")) document.querySelector(".services-link")?.classList.add("active-link");
+    if (path.includes("contact")) document.querySelector(".contact-link")?.classList.add("active-link");
+    if (path.includes("donation")) document.querySelector(".donation-link")?.classList.add("active-link");
+    if (path.includes("index")) document.querySelector(".home-link")?.classList.add("active-link");
+
+    // Donation progress bar
+    const donationsRaised = 0;
+    const donationGoal = 1000;
+    const percentRaised = Math.min((donationsRaised / donationGoal) * 100, 100);
+    document.getElementById("progressBar").style.width = percentRaised + "%";
+  </script>
+</body>
+</html>
+
 
