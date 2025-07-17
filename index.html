@@ -81,8 +81,10 @@
       transition: color 0.3s;
     }
 
-    nav a:hover {
+    nav a:hover,
+    .active-link {
       color: var(--accent-light);
+      text-decoration: underline;
     }
 
     .contact-form-wrapper {
@@ -135,13 +137,14 @@
     }
 
     @media (max-width: 600px) {
-      header, footer {
+      header {
         flex-direction: column;
         text-align: center;
       }
 
       nav {
         justify-content: center;
+        margin-top: 1rem;
       }
     }
   </style>
@@ -150,7 +153,7 @@
   <div class="donation-bar">
     💰 Donations Raised: $0 / $1000
     <div class="progress-container">
-      <div class="progress-bar" style="width: 0%;"></div>
+      <div class="progress-bar" id="progressBar"></div>
     </div>
   </div>
 
@@ -163,29 +166,4 @@
       <a href="contact.html" class="contact-link">Contact</a>
       <a href="donation.html" class="donation-link">Donations</a>
     </nav>
-  </header>
 
-  <section class="contact-form-wrapper">
-    <form action="https://formsubmit.co/eastsidesoftscrub@gmail.com" method="POST">
-      <input type="text" name="name" placeholder="Name*" required>
-      <input type="tel" name="phone" placeholder="Phone*" required>
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://eastside-softwash.com/thankyou.html">
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Eastside Softwash | Built for results, backed by trust.</p>
-  </footer>
-
-  <script>
-    const path = window.location.pathname;
-    if (path.includes("about")) document.querySelector(".about-link")?.classList.add("active-link");
-    if (path.includes("services")) document.querySelector(".services-link")?.classList.add("active-link");
-    if (path.includes("contact")) document.querySelector(".contact-link")?.classList.add("active-link");
-    if (path.includes("donation")) document.querySelector(".donation-link")?.classList.add("active-link");
-    if (path.includes("index")) document.querySelector(".home-link")?.classList.add("active-link");
-  </script>
-</body>
-</html>
