@@ -218,6 +218,33 @@
     <textarea name="message" placeholder="Message*" required></textarea>
     <input type="text" name="_honey" style="display:none">
     <input type="hidden" name="_captcha" value="false">
-    <input
+    <input type="hidden" name="_next" value="https://eastside-softwash.com/thankyou.html">
+    <button type="submit">Send Message</button>
+  </form>
+  <p>Call or Text: </p>
+</section>
 
+<footer>
+  <p>&copy; 2025 Eastside Softwash | Built for results, backed by trust.</p>
+</footer>
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const counter = document.getElementById("donationAmount");
+    let value = 0;
+    const goal = 0;
+    const duration = 2000;
+    const step = goal / (duration / 50);
+    const interval = setInterval(() => {
+      value += step;
+      if (value >= goal) {
+        value = goal;
+        clearInterval(interval);
+      }
+      counter.textContent = `$${value.toFixed(2)}`;
+    }, 50);
+  });
+</script>
+
+</body>
+</html>
