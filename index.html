@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Eastside Softwash</title>
 
-  <!-- ✅ Google Fonts with SRI -->
+  <!-- Google Fonts with SRI -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
         rel="stylesheet"
         integrity="sha384-w2jIMaRz2FhPbtwhGOn5NDnh6UZQShyQp/0E8z3xu8O3FCy8SQQcKjMp8BD7tK1g"
         crossorigin="anonymous">
 
-  <!-- ✅ Content Security Policy -->
+  <!-- Content Security Policy -->
   <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:; object-src 'none';">
 
@@ -209,14 +209,22 @@
 
 <section id="contact" class="contact">
   <h2>Contact Us Today!</h2>
-  <form id="contactForm" onsubmit="return validateForm(event)" autocomplete="off">
-    <input type="text" name="name" placeholder="Name*" required pattern="[a-zA-Z\s]{2,}" title="Only letters and spaces.">
-    <input type="tel" name="phone" placeholder="Phone*" required pattern="\d{10,15}" title="Enter a valid phone number.">
+  <form action="https://formsubmit.co/eastsidesoftscrub@gmail.com" method="POST" autocomplete="off">
+    <input type="text" name="name" placeholder="Name*" required>
+    <input type="tel" name="phone" placeholder="Phone*" required pattern="\d{10,15}">
     <input type="email" name="email" placeholder="Email*" required>
     <input type="text" name="address" placeholder="Address*" required>
     <textarea name="message" placeholder="Message*" required></textarea>
+
     <!-- Honeypot field -->
-    <input type="text" name="website" style="display:none">
+    <input type="text" name="_honey" style="display:none">
+
+    <!-- Disable CAPTCHA -->
+    <input type="hidden" name="_captcha" value="false">
+
+    <!-- Redirect to thank you page -->
+    <input type="hidden" name="_next" value="https://eastside-softwash.com/thankyou.html">
+
     <button type="submit">Send Message</button>
   </form>
   <p>Call or Text: </p>
@@ -226,10 +234,8 @@
   <p>&copy; 2025 Eastside Softwash | Built for results, backed by trust.</p>
 </footer>
 
-<!-- ✅ JavaScript securely scoped -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    // Donation counter
     const counter = document.getElementById("donationAmount");
     let value = 0;
     const goal = 0;
@@ -244,25 +250,6 @@
       counter.textContent = `$${value.toFixed(2)}`;
     }, 50);
   });
-
-  function validateForm(e) {
-    const form = document.getElementById('contactForm');
-    const honeypot = form.querySelector('input[name="website"]');
-    if (honeypot.value !== "") {
-      e.preventDefault();
-      alert("Spam detected.");
-      return false;
-    }
-    const inputs = form.querySelectorAll("input, textarea");
-    for (const input of inputs) {
-      if (/[<>]/.test(input.value)) {
-        alert("Invalid characters detected.");
-        e.preventDefault();
-        return false;
-      }
-    }
-    return true;
-  }
 </script>
 
 </body>
