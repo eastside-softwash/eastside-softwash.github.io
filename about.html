@@ -25,9 +25,9 @@
       font-family: 'Roboto', sans-serif;
       background: url('https://www.transparenttextures.com/patterns/concrete-wall.png') repeat #ccd1d1;
       color: var(--text-light);
-      line-height: 1.6;
       margin: 0;
       padding: 0;
+      line-height: 1.6;
     }
 
     .donation-bar {
@@ -82,17 +82,15 @@
       transition: color 0.3s;
     }
 
-    nav a:hover {
-      color: var(--accent-light);
-    }
-
+    nav a:hover,
     .active-link {
-      display: none;
+      color: var(--accent-light);
+      text-decoration: underline;
     }
 
     .content {
       max-width: 900px;
-      margin: auto;
+      margin: 4rem auto;
       padding: 3rem 2rem;
       background: rgba(27, 44, 71, 0.9);
       border-radius: 10px;
@@ -107,9 +105,8 @@
     }
 
     p {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       margin-bottom: 1.5rem;
-      color: var(--text-light);
     }
 
     footer {
@@ -121,13 +118,22 @@
     }
 
     @media (max-width: 600px) {
-      header, footer {
+      header {
         flex-direction: column;
         text-align: center;
       }
 
       nav {
         justify-content: center;
+        margin-top: 1rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .content {
+        margin: 2rem 1rem;
       }
     }
   </style>
@@ -136,7 +142,7 @@
   <div class="donation-bar">
     💰 Donations Raised: $0 / $1000
     <div class="progress-container">
-      <div class="progress-bar" style="width: 0%;"></div>
+      <div class="progress-bar" id="progressBar"></div>
     </div>
   </div>
 
@@ -144,6 +150,7 @@
     <div class="logo-text">Eastside Softwash</div>
     <nav>
       <a href="index.html" class="home-link">Home</a>
+      <a href="about.html" class="about-link">About Us</a>
       <a href="services.html" class="services-link">Services</a>
       <a href="contact.html" class="contact-link">Contact</a>
       <a href="donation.html" class="donation-link">Donations</a>
@@ -154,7 +161,7 @@
     <h1>About Us</h1>
     <p>We proudly serve Redmond and the surrounding area, delivering real, visible results through affordable power washing services. We also give back — 5% of all profit is donated to local animal shelters, and we provide proof of donation to every client.</p>
     <p>We are industry leaders in customer satisfaction and ethical business practices. Our mission is to be of service to our customers and our community.</p>
-    <p>We are an owner-operated exterior cleaning company with a mission to give the best quality service to our customers and give back to the communities and help make them a better place one job at a time. After every service you will receive an email with our donation to local charities as a part of our service.</p>
+    <p>We are an owner-operated exterior cleaning company with a mission to give the best quality service to our customers and give back to the communities and help make them a better place one job at a time. After every service, you will receive an email with our donation to local charities as a part of our service.</p>
   </div>
 
   <footer>
@@ -162,11 +169,22 @@
   </footer>
 
   <script>
+    // Set active nav link
     const path = window.location.pathname;
     if (path.includes("about")) document.querySelector(".about-link")?.classList.add("active-link");
     if (path.includes("services")) document.querySelector(".services-link")?.classList.add("active-link");
     if (path.includes("contact")) document.querySelector(".contact-link")?.classList.add("active-link");
     if (path.includes("donation")) document.querySelector(".donation-link")?.classList.add("active-link");
+    if (path.includes("index")) document.querySelector(".home-link")?.classList.add("active-link");
+
+    // Donation progress
+    const donationsRaised = 0;
+    const donationGoal = 1000;
+    const percent = Math.min((donationsRaised / donationGoal) * 100, 100);
+    document.getElementById("progressBar").style.width = percent + "%";
   </script>
+</body>
+</html>
+
 </body>
 </html>
