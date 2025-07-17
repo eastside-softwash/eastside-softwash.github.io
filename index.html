@@ -210,13 +210,21 @@
   <form action="https://formsubmit.co/eastsidesoftscrub@gmail.com" method="POST" autocomplete="off">
     <input type="text" name="name" placeholder="Name*" required>
     <input type="tel" name="phone" placeholder="Phone*" required>
-    <input type="hidden" name="_honey" style="display:none">
+
+    <!-- Honeypot spam trap -->
+    <input type="text" name="_honey" style="display:none">
+
+    <!-- Disable CAPTCHA -->
     <input type="hidden" name="_captcha" value="false">
+
+    <!-- Redirect after submit -->
     <input type="hidden" name="_next" value="https://eastside-softwash.com/thankyou.html">
+
     <button type="submit">Send Message</button>
   </form>
   <p>Call or Text: </p>
 </section>
+
 
 <footer>
   <p>&copy; 2025 Eastside Softwash | Built for results, backed by trust.</p>
