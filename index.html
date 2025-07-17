@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us - Eastside Softwash</title>
+  <title>Eastside Softwash</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -12,6 +12,29 @@
       color: #f0f0f0;
       margin: 0;
       padding: 0;
+    }
+
+    .donation-bar {
+      background: #333;
+      color: white;
+      padding: 0.5rem 2rem;
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    .progress-container {
+      background: #222;
+      height: 20px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 0.5rem;
+    }
+
+    .progress-bar {
+      background: #28a745;
+      height: 100%;
+      width: 0%;
+      transition: width 0.3s ease-in-out;
     }
 
     header {
@@ -23,9 +46,10 @@
       flex-wrap: wrap;
     }
 
-    .logo {
-      height: 60px;
-      border-radius: 10px;
+    .logo-text {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: white;
     }
 
     nav {
@@ -95,8 +119,17 @@
   </style>
 </head>
 <body>
+
+  <!-- DONATION BAR -->
+  <div class="donation-bar">
+    💰 Donations Raised: $0 / $100
+    <div class="progress-container">
+      <div class="progress-bar" style="width: 0%;"></div>
+    </div>
+  </div>
+
   <header>
-    <img src="images/logo.webp" alt="Eastside Softwash Logo" class="logo">
+    <div class="logo-text">Eastside Softwash</div>
     <nav>
       <a href="about.html">About Us</a>
       <a href="services.html">Services</a>
