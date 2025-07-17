@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donate - Eastside Softwash</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #3a5a60;        /* Greyish sea blue */
+      --secondary: #aaa;         /* Neutral grey */
+      --accent: #fbd5ab;         /* Light peach */
+      --dark: #0f1a2b;
+      --light-bg: #1b2c47;
+      --text-light: #f0f0f0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: var(--dark);
+      color: var(--text-light);
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: var(--primary);
+      padding: 1.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo-text {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    nav {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .active-link {
+      display: none;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 4rem auto;
+      padding: 2rem;
+      background: var(--light-bg);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    form input, form button {
+      margin: 10px 0;
+      padding: 12px;
+      border-radius: 5px;
+      border: 1px solid var(--secondary);
+      font-size: 1rem;
+    }
+
+    form input {
+      background: #222;
+      color: white;
+    }
+
+    form button {
+      background: var(--accent);
+      color: #111;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 2rem;
+      font-size: 1rem;
+      color: var(--secondary);
+    }
+
+    @media (max-width: 600px) {
+      header, footer {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-text">Eastside Softwash</div>
+    <nav>
+      <a href="about.html" class="about-link">About Us</a>
+      <a href="services.html" class="services-link">Services</a>
+      <a href="contact.html" class="contact-link">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Support Our Cause</h2>
+    <p>We donate 5% of all profits to local animal shelters. If you'd like to contribute directly to our donation fund, please use the form below. Every dollar helps us give back to the community.</p>
+
+    <form action="https://formsubmit.co/eastsidesoftscrub@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="number" name="donation" placeholder="Donation Amount (USD)" required>
+      <input type="hidden" name="form" value="donation">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://eastside-softwash.com/thankyou.html">
+      <button type="submit">Donate</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Eastside Softwash | Built for results, backed by trust.</p>
+  </footer>
+
+  <script>
+    const path = window.location.pathname;
+    if (path.includes("about")) document.querySelector(".about-link").classList.add("active-link");
+    if (path.includes("services")) document.querySelector(".services-link").classList.add("active-link");
+    if (path.includes("contact")) document.querySelector(".contact-link").classList.add("active-link");
+  </script>
+</body>
+</html>
