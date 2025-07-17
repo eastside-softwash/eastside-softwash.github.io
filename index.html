@@ -100,18 +100,22 @@
       padding: 2rem;
       border-radius: 10px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     .contact form input,
     .contact form textarea {
       width: 90%;
       max-width: 500px;
-      margin: 10px auto;
+      margin: 10px 0;
       padding: 12px;
       border: 1px solid #ccc;
       border-radius: 5px;
-      display: block;
       background: #222;
       color: white;
+      display: block;
+      font-size: 1rem;
     }
     .contact form button {
       background: #28a745;
@@ -121,11 +125,8 @@
       border-radius: 5px;
       cursor: pointer;
       font-weight: bold;
-      margin-top: 15px;
-      display: block;
+      margin-top: 20px;
       width: 200px;
-      margin-left: auto;
-      margin-right: auto;
     }
     .mission p {
       text-align: center;
@@ -211,48 +212,12 @@
   <h2>Contact Us Today!</h2>
   <form action="https://formsubmit.co/eastsidesoftscrub@gmail.com" method="POST" autocomplete="off">
     <input type="text" name="name" placeholder="Name*" required>
-    <input type="tel" name="phone" placeholder="Phone*" required pattern="\d{10,15}">
+    <input type="tel" name="phone" placeholder="Phone*" required pattern="\\d{10,15}">
     <input type="email" name="email" placeholder="Email*" required>
     <input type="text" name="address" placeholder="Address*" required>
     <textarea name="message" placeholder="Message*" required></textarea>
-
-    <!-- Honeypot field -->
     <input type="text" name="_honey" style="display:none">
-
-    <!-- Disable CAPTCHA -->
     <input type="hidden" name="_captcha" value="false">
-
-    <!-- Redirect to thank you page -->
-    <input type="hidden" name="_next" value="https://eastside-softwash.com/thankyou.html">
-
-    <button type="submit">Send Message</button>
-  </form>
-  <p>Call or Text: </p>
-</section>
-
-<footer>
-  <p>&copy; 2025 Eastside Softwash | Built for results, backed by trust.</p>
-</footer>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const counter = document.getElementById("donationAmount");
-    let value = 0;
-    const goal = 0;
-    const duration = 2000;
-    const step = goal / (duration / 50);
-    const interval = setInterval(() => {
-      value += step;
-      if (value >= goal) {
-        value = goal;
-        clearInterval(interval);
-      }
-      counter.textContent = `$${value.toFixed(2)}`;
-    }, 50);
-  });
-</script>
-
-</body>
-</html>
+    <input
 
 
