@@ -1,0 +1,39 @@
+<body>
+  <header class="site-header">
+    <div class="logo-area">
+      <img src="logo.png" alt="Eastside Softwash Logo" />
+    </div>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="contact.html">Contact</a>
+      <a href="donation.html">Donations</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Professional Exterior Cleaning. Trusted Results.</h1>
+    <p>Powerful. Gentle. Smart.</p>
+  </section>
+
+  <section class="donation-banner">
+    <p>💰 Donations Raised: $0 / $1000</p>
+    <div class="progress-container">
+      <div id="progressBar" class="progress-bar"></div>
+    </div>
+  </section>
+
+  <section class="services-section">
+    <h2>Our Services</h2>
+    <div class="service-card">
+      <h3>Pressure Washing</h3>
+      <p>Blast away dirt, grime, algae, and mildew from concrete, driveways, patios, and more.</p>
+    </div>
+    <!-- Repeat cards for each service -->
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Eastside Softwash | Built for results, backed by trust.</p>
+  </footer>
+</body>
