@@ -5,19 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Professional Roof Cleaning | Eastside Softwash</title>
     <meta name="description" content="Expert roof cleaning and moss removal in Greater Seattle. Protect your roof with our eco-friendly soft washing techniques. Free estimates!">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #17A18E;
-            --secondary-color: #0E385F;
-            --accent-color: #74C6BB;
+            --primary-color: #17A18E; /* Original primary color (greenish-blue) */
+            --secondary-color: #0E385F; /* Original secondary color (dark blue) */
+            --accent-color: #74C6BB; /* Original accent color (lighter teal) */
             --text-color: #545353;
             --light-color: #ffffff;
+
+            /* New colors inspired by screenshot's blue tones for header/hero */
+            --header-bg: #FFFFFF; /* White header background */
+            --header-text: #333; /* Dark text for header */
+            --hero-overlay-start: rgba(60, 90, 150, 0.75); /* Darker blue with transparency */
+            --hero-overlay-end: rgba(30, 50, 100, 0.75); /* Even darker blue with transparency */
+            --button-blue: #0A60B4; /* A shade of blue often seen in the screenshot's buttons */
         }
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Montserrat', sans-serif; /* Keep Montserrat as requested */
         }
         body {
             color: var(--text-color);
@@ -33,7 +41,7 @@
         }
         .btn {
             display: inline-block;
-            background-color: var(--primary-color);
+            background-color: var(--button-blue); /* Use a new blue for buttons */
             color: white;
             padding: 15px 30px;
             border-radius: 30px;
@@ -44,17 +52,58 @@
             transition: all 0.3s ease;
         }
         .btn:hover {
-            background-color: var(--secondary-color);
+            background-color: var(--secondary-color); /* Original dark blue on hover */
             transform: translateY(-3px);
         }
+
+        /* Header Styles (New based on typical layout and screenshot inference) */
+        header {
+            background-color: var(--header-bg);
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: relative;
+            z-index: 10;
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-text {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--secondary-color); /* Dark blue for logo text */
+            text-decoration: none;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+        nav ul li {
+            margin-left: 30px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: var(--header-text);
+            font-weight: 500;
+            font-size: 17px;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: var(--button-blue); /* Highlight nav links with button blue */
+        }
+
+
         /* Hero Section */
         .hero {
             position: relative;
             min-height: 80vh;
-            background: url('https://eastside-softwash.com/images/roof-moss-agitation.jpeg') no-repeat center center;
+            background: url('https://eastside-softwash.com/images/roof-moss-agitation.jpeg') no-repeat center center; /* Keep user's background image */
             background-size: cover;
             padding: 100px 0;
             color: white;
+            display: flex; /* Use flexbox to center content vertically */
+            align-items: center; /* Center content vertically */
         }
         .hero::before {
             content: '';
@@ -63,18 +112,22 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(180deg, #92A1E9 0%, #214F27 100%);
-            opacity: 0.65;
+            /* Adjusted gradient based on screenshot's blue tones */
+            background: linear-gradient(180deg, var(--hero-overlay-start) 0%, var(--hero-overlay-end) 100%);
+            opacity: 1; /* Make the overlay fully visible to match screenshot's strong color */
         }
         .hero-content {
             position: relative;
             max-width: 600px;
+            text-align: left; /* Align text left as often seen in such layouts */
+            z-index: 2; /* Ensure content is above overlay */
         }
         .hero h1 {
             font-size: 59px;
             font-weight: 700;
             text-transform: uppercase;
             margin-bottom: 20px;
+            line-height: 1.1; /* Adjust line height for better readability */
         }
         .hero h2 {
             font-size: 42px;
@@ -83,6 +136,11 @@
             line-height: 1.2;
             margin-bottom: 30px;
         }
+        .hero p {
+            font-size: 20px; /* Slightly larger text for hero paragraph */
+            margin-bottom: 20px;
+        }
+
         /* Service Section */
         .service-section {
             padding: 80px 0;
@@ -98,13 +156,16 @@
             flex-wrap: wrap;
             gap: 30px;
             margin-bottom: 50px;
+            justify-content: center; /* Center cards if they don't fill the row */
         }
         .benefit-card {
             flex: 1;
             min-width: 300px;
+            max-width: 350px; /* Limit max width for better responsiveness */
             padding: 30px;
             border-left: 3px solid var(--primary-color);
             background: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05); /* Add subtle shadow for depth */
         }
         .benefit-card h3 {
             color: var(--primary-color);
@@ -117,10 +178,12 @@
             flex-wrap: wrap;
             gap: 20px;
             margin-top: 40px;
+            justify-content: center; /* Center steps */
         }
         .step {
             flex: 1;
             min-width: 250px;
+            max-width: 280px; /* Limit max width for steps */
             text-align: center;
             padding: 20px;
         }
@@ -133,6 +196,7 @@
             border-radius: 50%;
             margin: 0 auto 20px;
             font-weight: bold;
+            font-size: 24px; /* Larger step number */
         }
         /* FAQ Section */
         .faq-section {
@@ -146,13 +210,17 @@
         .accordion-item {
             margin-bottom: 20px;
             border-bottom: 1px solid #ddd;
+            background-color: var(--light-color); /* White background for accordion items */
+            padding: 0 20px; /* Add some horizontal padding */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03); /* Subtle shadow */
         }
         .accordion-title {
             padding: 20px 0;
             cursor: pointer;
             position: relative;
-            font-weight: 500;
+            font-weight: 600; /* Slightly bolder title */
             font-size: 22px;
+            color: var(--secondary-color); /* Darker color for titles */
         }
         .accordion-content {
             padding: 0 0 20px 30px;
@@ -166,46 +234,84 @@
             transform: translateY(-50%);
             font-size: 24px;
             color: var(--primary-color);
+            transition: transform 0.3s ease; /* Smooth transition for icon */
         }
         .accordion-item.active .accordion-content {
             display: block;
         }
         .accordion-item.active .accordion-title::after {
             content: '-';
+            transform: translateY(-50%) rotate(0deg); /* Reset rotation if any */
         }
         /* Responsive Design */
         @media (max-width: 1024px) {
             .hero h1 { font-size: 50px; }
             .hero h2 { font-size: 36px; }
+            .logo-text { font-size: 24px; }
+            nav ul li { margin-left: 20px; }
         }
         @media (max-width: 767px) {
-            .hero { min-height: 70vh; padding: 60px 0; }
+            .header-container {
+                flex-direction: column;
+                align-items: flex-start; /* Align header items to start on small screens */
+            }
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+                margin-top: 15px;
+            }
+            nav ul li {
+                margin: 5px 0;
+                width: 100%;
+                text-align: center; /* Center nav links */
+            }
+            nav ul li a {
+                display: block; /* Make links block level for better tapping */
+                padding: 10px 0;
+            }
+
+            .hero { min-height: 70vh; padding: 60px 0; text-align: center; } /* Center text on small screens */
+            .hero-content { max-width: 100%; text-align: center; }
             .hero h1 { font-size: 35px; }
             .hero h2 { font-size: 24px; }
             .service-section h2 { font-size: 32px; }
-            .benefit-card, .step { min-width: 100%; }
+            .benefits, .process-steps { flex-direction: column; align-items: center; } /* Stack cards/steps */
+            .benefit-card, .step { min-width: unset; width: 100%; max-width: 400px; } /* Full width or max-width */
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo-text">Eastside Softwash</a>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Donations</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Roof Cleaning</h1>
-                <h2>Professional Moss & Algae Removal</h2>
-                <p>Protect your home and extend your roof's lifespan with our eco-friendly cleaning solutions</p>
+                <h1>Professional Roof Cleaning</h1>
+                <h2>Protect & Extend Your Roof's Life</h2>
+                <p>Eastside Softwash provides expert moss and algae removal with eco-friendly techniques, ensuring your roof looks great and lasts longer. Serving the Greater Seattle Area.</p>
                 <a href="#contact" class="btn">Get Free Estimate</a>
             </div>
         </div>
     </section>
 
-    <!-- Service Details -->
     <section class="service-section">
         <div class="container">
             <h2>Expert Roof Cleaning Services</h2>
             <p>At Eastside Softwash, we specialize in professional roof cleaning that removes harmful moss, algae, and debris without damaging your shingles. Our eco-friendly soft washing technique is safe for your roof and the environment.</p>
-            
+
             <div class="benefits">
                 <div class="benefit-card">
                     <h3>Extend Roof Life</h3>
@@ -223,11 +329,10 @@
         </div>
     </section>
 
-    <!-- Our Process -->
     <section class="service-section" style="background: #eef9f8;">
         <div class="container">
             <h2>Our Roof Cleaning Process</h2>
-            
+
             <div class="process-steps">
                 <div class="step">
                     <div class="step-number">1</div>
@@ -246,18 +351,17 @@
                 </div>
                 <div class="step">
                     <div class="step-number">4</div>
-                    <h3>Gentle Cleaning</h3>
+                    <h3 style="white-space: nowrap;">Gentle Cleaning</h3>
                     <p>Low-pressure rinse removes debris without damaging shingles</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
     <section class="faq-section">
         <div class="container">
             <h2>Roof Cleaning FAQs</h2>
-            
+
             <div class="accordion">
                 <div class="accordion-item">
                     <div class="accordion-title">Is roof cleaning safe for my shingles?</div>
@@ -265,21 +369,21 @@
                         <p>Yes, our soft washing technique uses low pressure (under 500 PSI) combined with specialized cleaning solutions that kill organic growth without damaging shingles. We never use high-pressure power washing that can strip away protective granules.</p>
                     </div>
                 </div>
-                
+
                 <div class="accordion-item">
                     <div class="accordion-title">How often should I clean my roof?</div>
                     <div class="accordion-content">
                         <p>In the Pacific Northwest, we recommend roof cleaning every 2-3 years. Homes with heavy tree coverage or north-facing roofs may need annual maintenance to prevent moss buildup.</p>
                     </div>
                 </div>
-                
+
                 <div class="accordion-item">
                     <div class="accordion-title">Do you offer moss prevention treatments?</div>
                     <div class="accordion-content">
                         <p>Yes, we apply zinc-based preventative treatments after cleaning that inhibit moss and algae growth for 12-24 months. This is highly recommended to extend time between cleanings.</p>
                     </div>
                 </div>
-                
+
                 <div class="accordion-item">
                     <div class="accordion-title">Will cleaning remove dark stains?</div>
                     <div class="accordion-content">
@@ -290,14 +394,19 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="service-section" style="text-align: center;">
         <div class="container">
             <h2>Ready for a Cleaner, Healthier Roof?</h2>
             <p>Contact us today for a free onsite estimate</p>
-            <a href="tel:14258213814" class="btn">Call (425) 821-3814</a>
+            <a href="mailto:info@eastsidesoftwash.com" class="btn">Email Us</a>
         </div>
     </section>
+
+    <footer style="background-color: var(--secondary-color); color: var(--light-color); text-align: center; padding: 40px 20px; font-size: 16px;">
+        <div class="container">
+            <p>&copy; 2025 Eastside Softwash. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script>
         // Accordion functionality
