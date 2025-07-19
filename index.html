@@ -108,18 +108,24 @@
         }
         .logo-text span {
             display: block;
-            font-size: 16px;
+            font-size: 16px; /* Adjusted font size for "SOFTWASH" */
             font-weight: 500;
             color: var(--text-color-light);
-            text-transform: none;
+            text-transform: none; /* Keep "CLEANING" in original case if it were there */
         }
         nav ul {
             list-style: none;
             display: flex;
             align-items: center; /* Align nav items vertically */
+            justify-content: center; /* Center the menu items */
+            flex-grow: 1; /* Allow ul to take available space */
         }
         nav ul li {
             margin-left: 30px;
+            position: relative; /* Needed for dropdown positioning */
+        }
+        nav ul li:first-child { /* Adjust first item margin if needed */
+            margin-left: 0;
         }
         nav ul li a {
             text-decoration: none;
@@ -129,6 +135,7 @@
             transition: color 0.3s ease;
             padding-bottom: 5px; /* Space for underline effect */
             position: relative;
+            display: block; /* Ensures padding/hover area for dropdown trigger */
         }
         nav ul li a:hover,
         nav ul li a.active {
@@ -160,6 +167,47 @@
         .nav-button:hover {
             background-color: var(--top-bar-bg); /* Darker blue on hover */
         }
+
+        /* Dropdown Menu Styles */
+        .dropdown-menu {
+            display: none; /* Hidden by default */
+            position: absolute;
+            background-color: var(--header-bg);
+            min-width: 180px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 100; /* Ensure it's above other content */
+            list-style: none;
+            padding: 10px 0;
+            border-radius: 5px;
+            top: 100%; /* Position below the parent link */
+            left: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .dropdown-menu li a {
+            color: var(--header-text);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        .dropdown-menu li a:hover {
+            background-color: #f1f1f1;
+            color: var(--header-hover);
+        }
+
+        /* Show dropdown on hover */
+        nav ul li.dropdown:hover .dropdown-menu {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+        }
+
 
         /* Hero Section */
         .hero {
@@ -504,28 +552,37 @@
     <!-- Top Bar -->
     <div class="top-bar">
         <div class="container top-bar-content">
-            <span>Call today for a free estimate</span>
+            <span>Call today for a free estimate | Phone (111) 111-1111</span>
         </div>
     </div>
 
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <a href="#" class="logo">
+            <a href="index.html" class="logo">
                 <!-- Placeholder for actual logo image if available, otherwise text -->
                 <!-- <img src="path/to/your/logo.png" alt="Eastside Softwash Logo"> -->
                 <div class="logo-text">
-                    EASTSIDE SOFTWASH
+                    EASTSIDE<br>SOFTWASH
                 </div>
             </a>
             <nav>
                 <ul>
-                    <li><a href="#" class="active">Home</a></li>
-                    <li><a href="#">Services</a></li>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li class="dropdown">
+                        <a href="services.html">Services</a> <!-- Main Services page link -->
+                        <ul class="dropdown-menu">
+                            <li><a href="soft-washing.html">Soft Washing</a></li>
+                            <li><a href="pressure-washing.html">Pressure Washing</a></li>
+                            <li><a href="solar-panel-cleaning.html">Solar Panel Cleaning</a></li>
+                            <li><a href="window-cleaning.html">Window Cleaning</a></li>
+                            <li><a href="gutter-cleaning.html">Gutter Cleaning</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#">Locations</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#" class="nav-button"><i class="fa-regular fa-comment-dots"></i> CHAT US</a></li>
-                    <li><a href="mailto:info@aawindowgutter.com" class="nav-button"><i class="fa-regular fa-envelope"></i> EMAIL US</a></li>
+                    <li><a href="mailto:info@eastsidesoftwash.com" class="nav-button"><i class="fa-regular fa-envelope"></i> EMAIL US</a></li>
                 </ul>
             </nav>
         </div>
@@ -556,7 +613,7 @@
     <!-- 5 Star Services Text Section -->
     <section class="five-star-services">
         <div class="container">
-            We provide 5 star services including cleaning roofs, gutters, windows, skylights, and solar panels.
+            We provide 5 star services including Soft Washing, Pressure Washing, Solar panels, Window Cleaning, Gutter Cleaning.
         </div>
     </section>
 
