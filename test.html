@@ -1,3 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services - Eastside Softwash</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #38b6ff;
+      --accent: #ffc93c;
+      --text-dark: #475b63;
+      --text-light: #ffffff;
+      --bg-light: #fefefe;
+      --bg-dark: #2e3d49;
+      --gray: #eaeaea;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--text-light);
+      padding: 1.5rem 3rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .logo-area img {
+      height: 50px;
+    }
+
+    .site-nav a {
+      margin-left: 2rem;
+      color: var(--text-dark);
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .site-nav a:hover,
+    .site-nav .active {
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary);
+    }
+
+    .hero {
+      background: linear-gradient(to right, var(--primary), #7ed6df);
+      color: var(--text-light);
+      padding: 4rem 2rem;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    .donation-banner {
+      background-color: var(--accent);
+      padding: 1rem 2rem;
+      text-align: center;
+      color: var(--text-dark);
+      font-weight: bold;
+      border-top: 4px solid var(--primary);
+    }
+
+    .progress-container {
+      background: var(--gray);
+      height: 20px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 0.5rem;
+    }
+
+    .progress-bar {
+      background-color: var(--primary);
+      height: 100%;
+      width: 0%;
+      transition: width 0.4s ease-in-out;
+    }
+
+    .services-section {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+
+    .services-section h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: var(--primary);
+    }
+
+    .service-card {
+      background: #fff;
+      padding: 1.5rem 2rem;
+      margin-bottom: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(56, 182, 255, 0.15);
+    }
+
+    .service-card h3 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .service-card p {
+      color: #555;
+    }
+
+    footer {
+      background-color: var(--text-dark);
+      color: var(--gray);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .site-header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .site-nav a {
+        margin: 0.5rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .services-section {
+        padding: 0 1rem;
+      }
+    }
+  </style>
+</head>
 <body>
   <header class="site-header">
     <div class="logo-area">
@@ -20,20 +177,49 @@
   <section class="donation-banner">
     <p>💰 Donations Raised: $0 / $1000</p>
     <div class="progress-container">
-      <div id="progressBar" class="progress-bar"></div>
+      <div class="progress-bar" id="progressBar"></div>
     </div>
   </section>
 
   <section class="services-section">
     <h2>Our Services</h2>
+
     <div class="service-card">
       <h3>Pressure Washing</h3>
-      <p>Blast away dirt, grime, algae, and mildew from concrete, driveways, patios, and more.</p>
+      <p>Blast away dirt, grime, algae, and mildew from concrete, driveways, patios, and more. A powerful deep clean that instantly improves curb appeal.</p>
     </div>
-    <!-- Repeat cards for each service -->
+
+    <div class="service-card">
+      <h3>Soft Washing</h3>
+      <p>Gentle but effective — perfect for siding, roofs, and fences. Our eco-safe detergents kill mold and bacteria without damaging surfaces.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Gutter Cleaning</h3>
+      <p>Prevent water damage and foundation issues by keeping your gutters clear and flowing. Includes debris removal and downspout flushing.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Window Cleaning</h3>
+      <p>Crystal clear results inside and out. We safely clean all glass with streak-free finish and care for screens, frames, and ledges.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Solar Panel Cleaning</h3>
+      <p>Maximize energy efficiency with our specialized solar panel cleaning. We safely remove dust, pollen, bird droppings, and residue that can block sunlight and reduce power output.</p>
+      <p>Bonus: Our AI-powered efficiency tracker lets customers monitor panel performance before and after cleaning. That means real results—backed by smart tech.</p>
+    </div>
   </section>
 
   <footer>
     <p>&copy; 2025 Eastside Softwash | Built for results, backed by trust.</p>
   </footer>
+
+  <script>
+    const donationsRaised = 0;
+    const donationGoal = 1000;
+    const percent = Math.min((donationsRaised / donationGoal) * 100, 100);
+    document.getElementById("progressBar").style.width = percent + "%";
+  </script>
 </body>
+</html>
