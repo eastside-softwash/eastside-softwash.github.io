@@ -3,65 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Services - Eastside Softwash</title>
+  <title>Eastside Softwash</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --primary: #38b6ff;
-      --accent: #ffc93c;
-      --text-dark: #475b63;
-      --text-light: #ffffff;
-      --bg-light: #fefefe;
-      --bg-dark: #2e3d49;
-      --gray: #eaeaea;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
       font-family: 'Roboto', sans-serif;
-      background-color: var(--bg-light);
-      color: var(--text-dark);
-      line-height: 1.6;
+      margin: 0;
+      background-color: #fefefe;
+      color: #333;
     }
 
-    .site-header {
+    header {
+      background-color: #ffffff;
+      padding: 1.5rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: var(--text-light);
-      padding: 1.5rem 3rem;
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
 
-    .logo-area img {
-      height: 50px;
-    }
-
-    .site-nav a {
-      margin-left: 2rem;
-      color: var(--text-dark);
-      font-weight: 600;
+    nav a {
+      margin-left: 1.5rem;
       text-decoration: none;
-      transition: color 0.3s ease;
+      color: #333;
+      font-weight: bold;
     }
 
-    .site-nav a:hover,
-    .site-nav .active {
-      color: var(--primary);
-      border-bottom: 2px solid var(--primary);
+    nav a:hover {
+      color: #38b6ff;
     }
 
     .hero {
-      background: linear-gradient(to right, var(--primary), #7ed6df);
-      color: var(--text-light);
+      background: linear-gradient(to right, #38b6ff, #7ed6df);
+      color: white;
       padding: 4rem 2rem;
       text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
     .hero h1 {
@@ -73,153 +49,93 @@
       font-size: 1.2rem;
     }
 
-    .donation-banner {
-      background-color: var(--accent);
-      padding: 1rem 2rem;
-      text-align: center;
-      color: var(--text-dark);
-      font-weight: bold;
-      border-top: 4px solid var(--primary);
-    }
-
-    .progress-container {
-      background: var(--gray);
-      height: 20px;
-      border-radius: 10px;
-      overflow: hidden;
-      margin-top: 0.5rem;
-    }
-
-    .progress-bar {
-      background-color: var(--primary);
-      height: 100%;
-      width: 0%;
-      transition: width 0.4s ease-in-out;
-    }
-
-    .services-section {
-      max-width: 800px;
-      margin: 4rem auto;
+    .services {
+      max-width: 900px;
+      margin: 3rem auto;
       padding: 0 2rem;
     }
 
-    .services-section h2 {
-      font-size: 2rem;
-      margin-bottom: 2rem;
-      text-align: center;
-      color: var(--primary);
-    }
-
-    .service-card {
+    .service {
       background: #fff;
-      padding: 1.5rem 2rem;
+      padding: 1.5rem;
       margin-bottom: 2rem;
       border-radius: 8px;
-      box-shadow: 0 0 15px rgba(56, 182, 255, 0.15);
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
 
-    .service-card h3 {
-      color: var(--primary);
+    .service h3 {
+      color: #38b6ff;
       margin-bottom: 0.5rem;
     }
 
-    .service-card p {
-      color: #555;
+    .testimonials {
+      background-color: #f0f8ff;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .testimonial {
+      margin-bottom: 1.5rem;
+      font-style: italic;
     }
 
     footer {
-      background-color: var(--text-dark);
-      color: var(--gray);
+      background-color: #333;
+      color: #ccc;
       text-align: center;
       padding: 2rem;
       font-size: 0.9rem;
     }
-
-    @media (max-width: 600px) {
-      .site-header {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .site-nav a {
-        margin: 0.5rem;
-      }
-
-      .hero h1 {
-        font-size: 2rem;
-      }
-
-      .services-section {
-        padding: 0 1rem;
-      }
-    }
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="logo-area">
-      <img src="logo.png" alt="Eastside Softwash Logo" />
-    </div>
-    <nav class="site-nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html" class="active">Services</a>
-      <a href="contact.html">Contact</a>
-      <a href="donation.html">Donations</a>
+  <header>
+    <div class="logo">Eastside Softwash</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Services</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
     </nav>
   </header>
 
   <section class="hero">
-    <h1>Professional Exterior Cleaning. Trusted Results.</h1>
-    <p>Powerful. Gentle. Smart.</p>
+    <h1>Exterior Cleaning You Can Trust</h1>
+    <p>Serving the Greater Seattle Area with professional softwashing, window, roof, and gutter care.</p>
   </section>
 
-  <section class="donation-banner">
-    <p>💰 Donations Raised: $0 / $1000</p>
-    <div class="progress-container">
-      <div class="progress-bar" id="progressBar"></div>
-    </div>
-  </section>
-
-  <section class="services-section">
-    <h2>Our Services</h2>
-
-    <div class="service-card">
+  <section class="services">
+    <div class="service">
       <h3>Pressure Washing</h3>
-      <p>Blast away dirt, grime, algae, and mildew from concrete, driveways, patios, and more. A powerful deep clean that instantly improves curb appeal.</p>
+      <p>Deep clean driveways, patios, and concrete surfaces to restore their original shine.</p>
     </div>
-
-    <div class="service-card">
+    <div class="service">
       <h3>Soft Washing</h3>
-      <p>Gentle but effective — perfect for siding, roofs, and fences. Our eco-safe detergents kill mold and bacteria without damaging surfaces.</p>
+      <p>Safe and effective cleaning for siding, roofs, and fences using eco-friendly solutions.</p>
     </div>
-
-    <div class="service-card">
+    <div class="service">
       <h3>Gutter Cleaning</h3>
-      <p>Prevent water damage and foundation issues by keeping your gutters clear and flowing. Includes debris removal and downspout flushing.</p>
+      <p>Clear out debris and ensure proper drainage to protect your home’s foundation.</p>
     </div>
-
-    <div class="service-card">
+    <div class="service">
       <h3>Window Cleaning</h3>
-      <p>Crystal clear results inside and out. We safely clean all glass with streak-free finish and care for screens, frames, and ledges.</p>
+      <p>Streak-free glass cleaning inside and out, including screens and frames.</p>
     </div>
-
-    <div class="service-card">
+    <div class="service">
       <h3>Solar Panel Cleaning</h3>
-      <p>Maximize energy efficiency with our specialized solar panel cleaning. We safely remove dust, pollen, bird droppings, and residue that can block sunlight and reduce power output.</p>
-      <p>Bonus: Our AI-powered efficiency tracker lets customers monitor panel performance before and after cleaning. That means real results—backed by smart tech.</p>
+      <p>Boost energy output with gentle panel cleaning and optional AI performance tracking.</p>
     </div>
+  </section>
+
+  <section class="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial">“They were professional, courteous, and left my property spotless.” – Denise K.</div>
+    <div class="testimonial">“Windows looked amazing. Will use your service again!” – Ed E.</div>
+    <div class="testimonial">“Fantastic job. Very thorough and detailed.” – Stacy F.</div>
   </section>
 
   <footer>
-    <p>&copy; 2025 Eastside Softwash | Built for results, backed by trust.</p>
+    &copy; 2025 Eastside Softwash | Licensed & Insured | Serving Seattle & Portland
   </footer>
-
-  <script>
-    const donationsRaised = 0;
-    const donationGoal = 1000;
-    const percent = Math.min((donationsRaised / donationGoal) * 100, 100);
-    document.getElementById("progressBar").style.width = percent + "%";
-  </script>
 </body>
 </html>
