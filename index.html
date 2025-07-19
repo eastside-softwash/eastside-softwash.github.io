@@ -1,47 +1,69 @@
-<link rel="stylesheet" href="css/style.css" />
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="css/style.css" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home - Eastside Softwash</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --primary: #5c8a8a;
-      --secondary: #ccd1d1;
-      --accent: #ffc89b;
-      --accent-dark: #e3a86e;
-      --accent-light: #ffdbba;
-      --dark: #0f1a2b;
-      --light-bg: #1b2c47;
-      --text-light: #f0f0f0;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       font-family: 'Roboto', sans-serif;
-      background: url('https://www.transparenttextures.com/patterns/concrete-wall.png') repeat #ccd1d1;
-      color: var(--text-light);
       margin: 0;
-      padding: 0;
+      background-color: #ffffff;
+      color: #333;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    nav a:hover,
+    .active-link {
+      color: #38b6ff;
+      border-bottom: 2px solid #38b6ff;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 5rem 2rem;
+      background: linear-gradient(to right, #38b6ff, #7ed6df);
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
     .donation-bar {
-      background: linear-gradient(to right, var(--accent-light), var(--accent), var(--accent-dark));
+      background-color: #ffc93c;
       color: #111;
-      padding: 0.5rem 2rem;
       text-align: center;
-      font-size: 1rem;
+      padding: 1rem;
       font-weight: bold;
     }
 
     .progress-container {
-      background: #222;
+      background: #eaeaea;
       height: 20px;
       border-radius: 10px;
       overflow: hidden;
@@ -49,87 +71,18 @@
     }
 
     .progress-bar {
-      background: linear-gradient(to right, var(--accent-light), var(--accent), var(--accent-dark));
+      background-color: #38b6ff;
       height: 100%;
       width: 0%;
-      transition: width 0.3s ease-in-out;
-    }
-
-    header {
-      background: linear-gradient(to right, #7aa9a9, var(--primary));
-      padding: 1.5rem 3rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .logo-text {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: white;
-    }
-
-    nav {
-      display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    nav a:hover,
-    .active-link {
-      color: var(--accent-light);
-      text-decoration: underline;
-    }
-
-    .hero {
-      padding: 6rem 2rem;
-      text-align: center;
-      background: rgba(15, 26, 43, 0.85);
-      color: var(--text-light);
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 800px;
-      margin: 0 auto 2rem auto;
-    }
-
-    .hero a {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 1rem 2rem;
-      background: linear-gradient(to right, var(--accent-light), var(--accent));
-      color: #111;
-      font-weight: bold;
-      border-radius: 5px;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-
-    .hero a:hover {
-      background: var(--accent-dark);
-      color: white;
+      transition: width 0.4s ease-in-out;
     }
 
     footer {
-      background: #111;
+      background-color: #333;
+      color: #ccc;
       text-align: center;
       padding: 2rem;
-      font-size: 1rem;
-      color: var(--secondary);
+      font-size: 0.9rem;
     }
 
     @media (max-width: 600px) {
@@ -138,9 +91,8 @@
         text-align: center;
       }
 
-      nav {
-        justify-content: center;
-        margin-top: 1rem;
+      nav a {
+        margin: 0.5rem;
       }
 
       .hero h1 {
@@ -154,13 +106,6 @@
   </style>
 </head>
 <body>
-  <div class="donation-bar">
-    💰 Donations Raised: $0 / $1000
-    <div class="progress-container">
-      <div class="progress-bar" id="progressBar"></div>
-    </div>
-  </div>
-
   <header>
     <div class="logo-text">Eastside Softwash</div>
     <nav>
@@ -175,15 +120,20 @@
   <section class="hero">
     <h1>We Keep the Northwest Clean</h1>
     <p>Eastside Softwash is an owner-operated exterior cleaning service dedicated to top-tier quality and community impact. We specialize in pressure washing, soft washing, roof & gutter cleaning — and donate 5% of every job to local animal shelters.</p>
-    <a href="contact.html">Get a Free Estimate</a>
   </section>
+
+  <div class="donation-bar">
+    💰 Donations Raised: $0 / $1000
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+  </div>
 
   <footer>
     <p>&copy; 2025 Eastside Softwash | Built for results, backed by trust.</p>
   </footer>
 
   <script>
-    // Highlight active nav
     const path = window.location.pathname;
     if (path.includes("about")) document.querySelector(".about-link")?.classList.add("active-link");
     if (path.includes("services")) document.querySelector(".services-link")?.classList.add("active-link");
@@ -191,13 +141,10 @@
     if (path.includes("donation")) document.querySelector(".donation-link")?.classList.add("active-link");
     if (path.includes("index")) document.querySelector(".home-link")?.classList.add("active-link");
 
-    // Donation progress bar
     const donationsRaised = 0;
     const donationGoal = 1000;
-    const percentRaised = Math.min((donationsRaised / donationGoal) * 100, 100);
-    document.getElementById("progressBar").style.width = percentRaised + "%";
+    const percent = Math.min((donationsRaised / donationGoal) * 100, 100);
+    document.getElementById("progressBar").style.width = percent + "%";
   </script>
 </body>
 </html>
-
-
