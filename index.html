@@ -121,7 +121,7 @@
         }
         nav ul li {
             margin-left: 30px;
-            position: relative; /* Needed for dropdown positioning */
+            position: relative; /* Crucial for dropdown positioning */
         }
         nav ul li:first-child { /* Adjust first item margin if needed */
             margin-left: 0;
@@ -134,7 +134,7 @@
             transition: color 0.3s ease;
             padding-bottom: 5px; /* Space for underline effect */
             position: relative;
-            display: block; /* Ensures padding/hover area for dropdown trigger */
+            display: inline-block; /* Changed to inline-block for proper width calculation */
         }
         nav ul li a:hover,
         nav ul li a.active {
@@ -172,15 +172,15 @@
             display: none; /* Hidden by default */
             position: absolute;
             background-color: var(--header-bg);
-            min-width: 180px;
+            min-width: 180px; /* You can adjust this min-width as needed */
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 100; /* Ensure it's above other content */
             list-style: none;
             padding: 10px 0;
             border-radius: 5px;
             top: 100%; /* Position below the parent link */
-            left: 0; /* Align the left edge of the dropdown with the left edge of the parent <li> */
-            transform: none; /* Remove the centering transform */
+            left: 50%; /* Position the left edge at 50% of the parent's width */
+            transform: translateX(-50%); /* Shift it left by half its own width to center */
             opacity: 0;
             visibility: hidden;
             transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -188,10 +188,10 @@
 
         .dropdown-menu li a {
             color: var(--header-text);
-            padding: 12px 16px; /* Keep original padding for now */
+            padding: 12px 16px;
             text-decoration: none;
             display: block;
-            text-align: left; /* Ensure text starts from the left */
+            text-align: center; /* Center the text within the dropdown items */
             font-weight: 500;
             font-size: 15px;
         }
