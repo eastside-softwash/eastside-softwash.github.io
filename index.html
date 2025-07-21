@@ -179,8 +179,8 @@
             padding: 10px 0;
             border-radius: 5px;
             top: 100%; /* Position below the parent link */
-            left: 50%; /* Center the dropdown horizontally relative to its parent li */
-            transform: translateX(-50%); /* Adjust to truly center it */
+            left: 0; /* Align the left edge of the dropdown with the left edge of the parent <li> */
+            transform: none; /* Remove the centering transform */
             opacity: 0;
             visibility: hidden;
             transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -188,10 +188,10 @@
 
         .dropdown-menu li a {
             color: var(--header-text);
-            padding: 12px 16px;
+            padding: 12px 16px; /* Keep original padding for now */
             text-decoration: none;
             display: block;
-            text-align: left;
+            text-align: left; /* Ensure text starts from the left */
             font-weight: 500;
             font-size: 15px;
         }
