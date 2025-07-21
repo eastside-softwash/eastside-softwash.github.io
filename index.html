@@ -6,7 +6,6 @@
     <title>Home - Eastside Softwash</title>
     <meta name="description" content="Professional exterior cleaning services in Greater Seattle, specializing in roof, window, and gutter cleaning. Free estimates.">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         :root {
@@ -180,7 +179,8 @@
             padding: 10px 0;
             border-radius: 5px;
             top: 100%; /* Position below the parent link */
-            left: 0;
+            left: 50%; /* Center the dropdown horizontally relative to its parent li */
+            transform: translateX(-50%); /* Adjust to truly center it */
             opacity: 0;
             visibility: hidden;
             transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -549,19 +549,15 @@
     </style>
 </head>
 <body>
-    <!-- Top Bar -->
     <div class="top-bar">
         <div class="container top-bar-content">
             <span>Call today for a free estimate | Phone (111) 111-1111</span>
         </div>
     </div>
 
-    <!-- Header -->
     <header>
         <div class="container header-container">
             <a href="index.html" class="logo">
-                <!-- Placeholder for actual logo image if available, otherwise text -->
-                <!-- <img src="path/to/your/logo.png" alt="Eastside Softwash Logo"> -->
                 <div class="logo-text">
                     EASTSIDE<br>SOFTWASH
                 </div>
@@ -570,8 +566,7 @@
                 <ul>
                     <li><a href="index.html" class="active">Home</a></li>
                     <li class="dropdown">
-                        <a href="services.html">Services</a> <!-- Main Services page link -->
-                        <ul class="dropdown-menu">
+                        <a href="services.html">Services</a> <ul class="dropdown-menu">
                             <li><a href="Soft Washing Services.html">Soft Washing</a></li>
                             <li><a href="Pressure Washing Services.html">Pressure Washing</a></li>
                             <li><a href="Solar Panel Cleaning Services.html">Solar Panel Cleaning</a></li>
@@ -588,16 +583,7 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
-        <!-- Video Background Placeholder -->
-        <!-- Replace this div with a <video> tag when you have your video file -->
-        <!-- Example:
-        <video autoplay muted loop class="video-background">
-            <source src="path/to/your/background-video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        -->
         <div class="video-background video-background-placeholder"></div>
 
         <div class="container hero-content">
@@ -610,26 +596,22 @@
         </div>
     </section>
 
-    <!-- 5 Star Services Text Section -->
     <section class="five-star-services">
         <div class="container">
             We provide 5 star services including Soft Washing, Pressure Washing, Solar panels, Window Cleaning, Gutter Cleaning.
         </div>
     </section>
 
-    <!-- Our Services Section (Updated) -->
     <section class="our-services-section">
         <div class="container">
             <h2>Our Core Services</h2>
             <div class="services-grid">
                 <div class="service-card-item">
-                    <div class="icon"><i class="fa-solid fa-house-chimney-crack"></i></div> <!-- Changed to represent soft washing/gentle roof care -->
-                    <h3>Soft Washing</h3>
+                    <div class="icon"><i class="fa-solid fa-house-chimney-crack"></i></div> <h3>Soft Washing</h3>
                     <p>Gentle, low-pressure cleaning for roofs, siding, and delicate surfaces to remove organic growth.</p>
                 </div>
                 <div class="service-card-item">
-                    <div class="icon"><i class="fa-solid fa-trash-can"></i></div> <!-- Icon for clearing debris -->
-                    <h3>Gutter Cleaning</h3>
+                    <div class="icon"><i class="fa-solid fa-trash-can"></i></div> <h3>Gutter Cleaning</h3>
                     <p>Clear gutters of leaves and debris, ensuring proper water flow and preventing costly damage.</p>
                 </div>
                 <div class="service-card-item">
@@ -638,8 +620,7 @@
                     <p>Maximize energy efficiency by cleaning your solar panels, removing dirt and grime buildup.</p>
                 </div>
                 <div class="service-card-item">
-                    <div class="icon"><i class="fa-solid fa-window-restore"></i></div> <!-- Icon for window cleaning -->
-                    <h3>Window Cleaning</h3>
+                    <div class="icon"><i class="fa-solid fa-window-restore"></i></div> <h3>Window Cleaning</h3>
                     <p>Achieve streak-free, sparkling windows with our professional cleaning techniques.</p>
                 </div>
                 <div class="service-card-item">
@@ -651,7 +632,6 @@
         </div>
     </section>
 
-    <!-- Service Details (now specific to Roof Cleaning) -->
     <section class="service-details-section">
         <div class="container">
             <h2>Expert Roof Cleaning Services</h2>
@@ -674,7 +654,6 @@
         </div>
     </section>
 
-    <!-- Our Process -->
     <section class="service-section" style="background: #eef9f8;">
         <div class="container">
             <h2>Our Roof Cleaning Process</h2>
@@ -704,7 +683,6 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
     <section class="faq-section">
         <div class="container">
             <h2>Roof Cleaning FAQs</h2>
@@ -741,7 +719,6 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
             <h2>Ready for a Cleaner, Healthier Home?</h2>
@@ -750,7 +727,6 @@
         </div>
     </section>
 
-    <!-- Basic Footer -->
     <footer style="background-color: var(--secondary-color); color: var(--light-color); text-align: center; padding: 40px 20px; font-size: 16px;">
         <div class="container">
             <p>&copy; 2025 Eastside Softwash. All rights reserved.</p>
