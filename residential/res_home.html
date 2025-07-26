@@ -65,11 +65,11 @@
         }
         .top-bar-content {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-between; /* Adjusted to space-between for back button */
             align-items: center;
             gap: 20px;
         }
-        .top-bar-contact-info {
+        .top-bar-contact-info { /* New class for the right-aligned text */
             display: flex;
             gap: 20px;
             align-items: center;
@@ -80,7 +80,7 @@
             transition: color 0.3s ease;
         }
         .top-bar-contact-info a:hover {
-            color: var(--primary-blue);
+            color: var(--primary-blue); /* Use a brighter blue for hover */
         }
         .top-bar-contact-info i {
             margin-right: 5px;
@@ -95,13 +95,12 @@
             align-items: center;
             gap: 5px;
             transition: color 0.3s ease;
-            margin-right: auto; /* Pushes contact info to the right */
         }
         .back-button:hover {
             color: var(--primary-blue);
         }
         .back-button i {
-            margin-right: 0;
+            margin-right: 0; /* Override default margin */
         }
 
 
@@ -125,18 +124,18 @@
             color: var(--logo-dark-blue);
         }
         .logo img {
-            height: 60px;
+            height: 60px; /* Adjust logo height as needed */
             margin-right: 10px;
         }
         .logo-text {
             font-size: 24px;
-            font-weight: 800;
+            font-weight: 800; /* Bolder font for logo */
             line-height: 1.2;
             text-transform: uppercase;
         }
         .logo-text span {
             display: block;
-            font-size: 16px;
+            font-size: 16px; /* Adjusted font size for "SOFTWASH" */
             font-weight: 500;
             color: var(--medium-text);
             text-transform: none;
@@ -144,15 +143,15 @@
         nav ul {
             list-style: none;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-grow: 1;
+            align-items: center; /* Align nav items vertically */
+            justify-content: center; /* Center the menu items */
+            flex-grow: 1; /* Allow ul to take available space */
         }
         nav ul li {
             margin-left: 30px;
-            position: relative;
+            position: relative; /* Crucial for dropdown positioning */
         }
-        nav ul li:first-child {
+        nav ul li:first-child { /* Adjust first item margin if needed */
             margin-left: 0;
         }
         nav ul li a {
@@ -161,7 +160,7 @@
             font-weight: 600;
             font-size: 16px;
             transition: color 0.3s ease;
-            padding-bottom: 5px;
+            padding-bottom: 5px; /* Space for underline effect */
             position: relative;
             display: inline-block;
         }
@@ -179,7 +178,7 @@
             background-color: var(--primary-blue);
         }
         .nav-button {
-            background-color: var(--primary-blue);
+            background-color: var(--primary-blue); /* Blue background for chat/email buttons */
             color: var(--white-text);
             padding: 8px 15px;
             border-radius: 5px;
@@ -193,12 +192,12 @@
             gap: 5px;
         }
         .nav-button:hover {
-            background-color: var(--dark-blue);
+            background-color: var(--dark-blue); /* Darker blue on hover */
         }
 
         /* Dropdown Menu Styles */
         .dropdown-menu {
-            display: none;
+            display: none; /* Hidden by default */
             position: absolute;
             background-color: var(--white-bg);
             min-width: 180px;
@@ -207,9 +206,9 @@
             list-style: none;
             padding: 10px 0;
             border-radius: 5px;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
+            top: 100%; /* Position below the parent link */
+            left: 50%; /* Position the left edge at 50% of the parent's width */
+            transform: translateX(-50%); /* Shift it left by half its own width to center */
             opacity: 0;
             visibility: hidden;
             transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -241,13 +240,13 @@
         /* Hero Section */
         .hero {
             position: relative;
-            min-height: 600px;
+            min-height: 600px; /* Adjust height as needed */
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: center; /* Center content horizontally */
             color: var(--white-text);
-            text-align: left;
-            overflow: hidden;
+            text-align: left; /* Align text left within its container */
+            overflow: hidden; /* Hide overflow for video */
         }
 
         .video-background {
@@ -256,10 +255,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: cover; /* Cover the entire container */
             z-index: 1;
             /* Using a generic placeholder for the video background */
-            background: linear-gradient(to right, #0A60B4, #17A18E);
+            background: linear-gradient(to right, #0A60B4, #17A18E); /* Example gradient or solid color */
         }
 
 
@@ -277,19 +276,19 @@
         .hero-content {
             position: relative;
             z-index: 3;
-            max-width: 800px;
+            max-width: 800px; /* Adjust max-width as seen in screenshot */
             padding: 20px;
         }
         .hero h1 {
-            font-size: 58px;
-            font-weight: 800;
+            font-size: 58px; /* Larger font size for main heading */
+            font-weight: 800; /* Extra bold */
             line-height: 1.1;
             margin-bottom: 15px;
             text-transform: uppercase;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         .hero p {
-            font-size: 32px;
+            font-size: 32px; /* Large subtitle */
             font-weight: 600;
             margin-bottom: 30px;
             text-transform: uppercase;
@@ -301,8 +300,8 @@
             margin-top: 30px;
         }
         .hero-buttons .btn {
-            padding: 18px 35px;
-            border-radius: 30px;
+            padding: 18px 35px; /* Larger buttons */
+            border-radius: 30px; /* More rounded */
             font-size: 18px;
             font-weight: 700;
             text-transform: uppercase;
@@ -310,38 +309,38 @@
             transition: all 0.3s ease;
         }
         .hero-buttons .btn.primary {
-            background-color: var(--accent-green);
+            background-color: var(--accent-green); /* Greenish-blue button */
             color: var(--white-text);
         }
         .hero-buttons .btn.primary:hover {
-            background-color: #148f7d;
+            background-color: #148f7d; /* Slightly darker green on hover */
         }
         .hero-buttons .btn.secondary {
-            background-color: var(--primary-blue);
+            background-color: var(--primary-blue); /* Blue button */
             color: var(--white-text);
         }
         .hero-buttons .btn.secondary:hover {
-            background-color: var(--dark-blue);
+            background-color: var(--dark-blue); /* Darker blue on hover */
         }
 
         /* 5 Star Services Text Section */
         .five-star-services {
-            background-color: var(--light-bg);
+            background-color: var(--light-bg); /* Matches overall page background */
             padding: 40px 0;
             text-align: center;
             font-size: 22px;
             font-weight: 600;
             color: var(--dark-text);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03); /* Subtle shadow below it */
         }
 
         /* Our Services Section (New) */
         .our-services-section {
             padding: 80px 0;
-            background-color: var(--white-bg);
+            background-color: var(--white-bg); /* White background */
         }
         .our-services-section h2 {
-            color: var(--dark-blue);
+            color: var(--dark-blue); /* Changed to a dark blue for headers */
             font-size: 42px;
             margin-bottom: 40px;
             text-align: center;
@@ -356,7 +355,7 @@
             flex: 1;
             min-width: 280px;
             max-width: 350px;
-            background-color: var(--light-bg);
+            background-color: var(--light-bg); /* Use light background for cards */
             border-radius: 8px;
             box-shadow: var(--shadow-medium);
             padding: 30px;
@@ -369,12 +368,12 @@
         }
         .service-card-item .icon {
             font-size: 50px;
-            color: var(--accent-green);
+            color: var(--accent-green); /* Changed icon color to primary accent green */
             margin-bottom: 20px;
         }
         .service-card-item h3 {
             font-size: 26px;
-            color: var(--dark-blue);
+            color: var(--dark-blue); /* Changed header color to dark blue */
             margin-bottom: 15px;
         }
         .service-card-item p {
@@ -383,16 +382,16 @@
         }
 
         /* Service Details Section (Existing, renamed class for clarity from .service-section) */
-        .service-details-section {
+        .service-details-section { /* Renamed for distinction */
             padding: 80px 0;
         }
-        .service-details-section h2 {
+        .service-details-section h2 { /* Targeting the specific H2 */
             color: var(--dark-blue);
             font-size: 42px;
             margin-bottom: 40px;
             text-align: center;
         }
-        .service-details-section p {
+        .service-details-section p { /* Style for paragraphs in this section */
             text-align: center;
             max-width: 800px;
             margin: 0 auto 50px;
@@ -410,18 +409,18 @@
             min-width: 300px;
             max-width: 350px;
             padding: 30px;
-            border-left: 3px solid var(--accent-green);
+            border-left: 3px solid var(--accent-green); /* Changed border color to primary accent green */
             background: var(--light-bg);
             box-shadow: 0 4px 8px rgba(0,0,0,0.05);
         }
         .benefit-card h3 {
-            color: var(--accent-green);
+            color: var(--accent-green); /* Changed header color to primary accent green */
             margin-bottom: 15px;
             font-size: 24px;
         }
         /* Process Section */
-        .process-section {
-            background: #eef9f8;
+        .process-section { /* Renamed from .service-section for clarity */
+            background: #eef9f8; /* A slightly lighter, greenish tint for this section */
             padding: 80px 0;
         }
         .process-section h2 {
@@ -445,7 +444,7 @@
             padding: 20px;
         }
         .step-number {
-            background: var(--accent-green);
+            background: var(--accent-green); /* Changed step number background to primary accent green */
             color: var(--white-text);
             width: 50px;
             height: 50px;
@@ -457,7 +456,7 @@
         }
         /* FAQ Section */
         .faq-section {
-            background: var(--light-bg);
+            background: var(--light-bg); /* Consistent light background */
             padding: 80px 0;
         }
         .faq-section h2 {
@@ -473,7 +472,7 @@
         .accordion-item {
             margin-bottom: 20px;
             border-bottom: 1px solid #ddd;
-            background-color: var(--white-bg);
+            background-color: var(--white-bg); /* White background for accordion items */
             padding: 0 20px;
             box-shadow: var(--shadow-light);
         }
@@ -496,7 +495,7 @@
             top: 50%;
             transform: translateY(-50%);
             font-size: 24px;
-            color: var(--accent-green);
+            color: var(--accent-green); /* Changed to primary accent green */
             transition: transform 0.3s ease;
         }
         .accordion-item.active .accordion-content {
@@ -510,7 +509,7 @@
         .cta-section {
             padding: 80px 0;
             text-align: center;
-            background-color: var(--light-bg);
+            background-color: var(--light-bg); /* Consistent with other light sections */
         }
         .cta-section h2 {
             color: var(--dark-blue);
@@ -521,7 +520,7 @@
             font-size: 20px;
             margin-bottom: 30px;
         }
-        .cta-section .btn {
+        .cta-section .btn { /* Styling for the button in CTA */
             background-color: var(--accent-green);
             color: var(--white-text);
             padding: 15px 30px;
@@ -530,16 +529,16 @@
             font-weight: 700;
             font-size: 18px;
             transition: background-color 0.3s ease;
-            display: inline-block;
+            display: inline-block; /* Ensure padding works */
         }
         .cta-section .btn:hover {
-            background-color: #148f7d;
+            background-color: #148f7d; /* Darker green on hover */
         }
 
 
         /* Footer */
         footer {
-            background-color: var(--dark-blue);
+            background-color: var(--dark-blue); /* Dark blue footer */
             color: var(--white-text);
             text-align: center;
             padding: 40px 20px;
@@ -550,27 +549,25 @@
         @media (max-width: 1024px) {
             .hero h1 { font-size: 48px; }
             .hero p { font-size: 28px; }
-            .service-card { flex: 0 1 calc(50% - 20px); }
-            .our-services-section h2, .service-details-section h2, .cta-section h2, .faq-section h2, .process-section h2 { font-size: 36px; }
+            .service-card { flex: 0 1 calc(50% - 20px); } /* Adjust gap for smaller screens */
+            .our-services-section h2, .service-details-section h2, .cta-section h2, .faq-section h2, .process-section h2 { font-size: 36px; } /* Added process-section h2 */
         }
 
         @media (max-width: 767px) {
             .top-bar-content {
-                flex-direction: column;
-                align-items: flex-start; /* Align items to the start on small screens */
+                flex-direction: column; /* Stack back button and contact info */
+                align-items: center;
                 gap: 10px;
             }
             .top-bar-contact-info {
                 justify-content: center;
                 flex-wrap: wrap;
-                width: 100%;
-                text-align: center; /* Center the text within its flex item */
+                width: 100%; /* Take full width on small screens */
             }
             .back-button {
-                width: 100%;
-                justify-content: center; /* Center the back button horizontally */
+                width: 100%; /* Make back button full width on small screens */
+                justify-content: center;
                 margin-bottom: 10px;
-                margin-right: 0; /* Remove auto margin on small screens */
             }
             .header-container {
                 flex-direction: column;
@@ -578,6 +575,11 @@
             }
             .logo {
                 margin-bottom: 15px;
+            }
+            /* New rule for the back button in the header, hidden by default */
+            .back-button-header {
+                display: none; /* Hidden on larger screens */
+                margin-top: 10px; /* Space below the logo */
             }
             nav ul {
                 flex-wrap: wrap;
@@ -602,7 +604,7 @@
                 gap: 15px;
             }
             .hero-buttons .btn {
-                width: 80%;
+                width: 80%; /* Make buttons wider on mobile */
                 max-width: 300px;
             }
 
@@ -616,6 +618,19 @@
             .our-services-section h2, .service-details-section h2, .cta-section h2, .faq-section h2, .process-section h2 { font-size: 32px; }
             .benefits, .process-steps, .services-grid { flex-direction: column; align-items: center; }
             .benefit-card, .step, .service-card-item { min-width: unset; width: 100%; max-width: 400px; }
+        }
+
+        /* Show the header back button only on screens <= 767px */
+        @media (max-width: 767px) {
+            .back-button-header {
+                display: block; /* Show on mobile screens */
+                margin-top: 10px;
+                text-align: center; /* Center the back button */
+            }
+            .back-button-header .back-button {
+                color: var(--dark-blue); /* Adjust color for header background */
+                font-size: 18px; /* Slightly larger for prominence */
+            }
         }
     </style>
 </head>
@@ -633,8 +648,16 @@
 
     <header>
         <div class="container header-container">
-            <div class="logo"> <div class="logo-text">
-                    EASTSIDE<br>SOFTWASH
+            <div class="logo-and-back-button">
+                <a href="index.html" class="logo">
+                    <div class="logo-text">
+                        EASTSIDE<br>SOFTWASH
+                    </div>
+                </a>
+                <div class="back-button-header">
+                    <a href="index.html" class="back-button">
+                        <i class="fa-solid fa-arrow-left"></i> BACK
+                    </a>
                 </div>
             </div>
             <nav>
