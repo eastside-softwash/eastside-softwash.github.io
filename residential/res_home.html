@@ -6,26 +6,32 @@
     <title>Home - Eastside Softwash</title>
     <meta name="description" content="Professional exterior cleaning services in Greater Seattle, specializing in roof, window, and gutter cleaning. Free estimates.">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         :root {
-            --top-bar-bg: #00478F; /* Dark blue from screenshot top bar */
-            --top-bar-text: #E0E0E0; /* Light gray for top bar text */
-            --header-bg: #FFFFFF; /* White header background */
-            --header-text: #333; /* Dark text for header links */
-            --header-hover: #0A60B4; /* Blue for hover/active links */
-            --logo-color: #0E385F; /* Dark blue for logo */
-            --hero-overlay-start: rgba(0, 0, 0, 0.4); /* Darker overlay for video */
-            --hero-overlay-end: rgba(0, 0, 0, 0.6); /* Even darker overlay for video */
-            --hero-text-color: #FFFFFF;
-            --button-primary-bg: #17A18E; /* Greenish-blue for primary buttons */
-            --button-secondary-bg: #0A60B4; /* Blue for secondary buttons */
-            --button-text: #FFFFFF;
-            --section-bg-light: #F8F8F8; /* Light background for sections */
-            --text-color-dark: #333;
-            --text-color-light: #555;
-            --card-bg: #FFFFFF;
+            /* Primary Brand Colors */
+            --primary-blue: #0A60B4; /* Used for buttons, hover, accents */
+            --dark-blue: #00478F; /* Top bar background, darker hover */
+            --logo-dark-blue: #0E385F; /* Darker blue for logo */
+            --accent-green: #17A18E; /* Primary button background */
+
+            /* Text Colors */
+            --dark-text: #333;
+            --medium-text: #555;
+            --light-text: #E0E0E0; /* For top bar text */
+            --white-text: #FFFFFF;
+
+            /* Background Colors */
+            --light-bg: #F8F8F8; /* Light section background, overall page */
+            --white-bg: #FFFFFF; /* Header, card background */
+            --hero-overlay-start: rgba(0, 0, 0, 0.4);
+            --hero-overlay-end: rgba(0, 0, 0, 0.6);
+
+            /* Borders/Shadows */
             --card-border: #E0E0E0;
+            --shadow-light: 0 2px 5px rgba(0,0,0,0.05);
+            --shadow-medium: 0 4px 15px rgba(0,0,0,0.08);
+            --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
         }
 
         * {
@@ -36,11 +42,11 @@
         }
 
         body {
-            color: var(--text-color-light);
+            color: var(--medium-text);
             font-size: 18px;
             line-height: 1.6;
             overflow-x: hidden;
-            background-color: var(--section-bg-light); /* Overall page background */
+            background-color: var(--light-bg); /* Overall page background */
         }
 
         .container {
@@ -52,35 +58,57 @@
 
         /* Top Bar */
         .top-bar {
-            background-color: var(--top-bar-bg);
-            color: var(--top-bar-text);
+            background-color: var(--dark-blue);
+            color: var(--light-text);
             padding: 10px 0;
             font-size: 14px;
-            text-align: right;
         }
         .top-bar-content {
             display: flex;
-            justify-content: flex-end; /* Align content to the right */
+            justify-content: space-between; /* Adjusted to space-between for back button */
             align-items: center;
             gap: 20px;
         }
-        .top-bar-content a {
-            color: var(--top-bar-text);
+        .top-bar-contact-info { /* New class for the right-aligned text */
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .top-bar-contact-info a {
+            color: var(--light-text);
             text-decoration: none;
             transition: color 0.3s ease;
         }
-        .top-bar-content a:hover {
-            color: var(--header-hover); /* Use a brighter blue for hover */
+        .top-bar-contact-info a:hover {
+            color: var(--primary-blue); /* Use a brighter blue for hover */
         }
-        .top-bar-content i {
+        .top-bar-contact-info i {
             margin-right: 5px;
         }
 
+        /* Back Button Specific Styles */
+        .back-button {
+            color: var(--light-text);
+            text-decoration: none;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s ease;
+        }
+        .back-button:hover {
+            color: var(--primary-blue);
+        }
+        .back-button i {
+            margin-right: 0; /* Override default margin */
+        }
+
+
         /* Header */
         header {
-            background-color: var(--header-bg);
+            background-color: var(--white-bg);
             padding: 15px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            box-shadow: var(--shadow-light);
             position: relative;
             z-index: 10;
         }
@@ -93,7 +121,7 @@
             display: flex;
             align-items: center;
             text-decoration: none;
-            color: var(--logo-color);
+            color: var(--logo-dark-blue);
         }
         .logo img {
             height: 60px; /* Adjust logo height as needed */
@@ -109,8 +137,8 @@
             display: block;
             font-size: 16px; /* Adjusted font size for "SOFTWASH" */
             font-weight: 500;
-            color: var(--text-color-light);
-            text-transform: none; /* Keep "CLEANING" in original case if it were there */
+            color: var(--medium-text);
+            text-transform: none;
         }
         nav ul {
             list-style: none;
@@ -128,17 +156,17 @@
         }
         nav ul li a {
             text-decoration: none;
-            color: var(--header-text);
+            color: var(--dark-text);
             font-weight: 600;
             font-size: 16px;
             transition: color 0.3s ease;
             padding-bottom: 5px; /* Space for underline effect */
             position: relative;
-            display: inline-block; /* Changed to inline-block for proper width calculation */
+            display: inline-block;
         }
         nav ul li a:hover,
         nav ul li a.active {
-            color: var(--header-hover);
+            color: var(--primary-blue);
         }
         nav ul li a.active::after {
             content: '';
@@ -147,11 +175,11 @@
             bottom: 0;
             width: 100%;
             height: 2px;
-            background-color: var(--header-hover);
+            background-color: var(--primary-blue);
         }
         .nav-button {
-            background-color: var(--button-secondary-bg); /* Blue background for chat/email buttons */
-            color: var(--button-text);
+            background-color: var(--primary-blue); /* Blue background for chat/email buttons */
+            color: var(--white-text);
             padding: 8px 15px;
             border-radius: 5px;
             font-size: 15px;
@@ -164,17 +192,17 @@
             gap: 5px;
         }
         .nav-button:hover {
-            background-color: var(--top-bar-bg); /* Darker blue on hover */
+            background-color: var(--dark-blue); /* Darker blue on hover */
         }
 
         /* Dropdown Menu Styles */
         .dropdown-menu {
             display: none; /* Hidden by default */
             position: absolute;
-            background-color: var(--header-bg);
-            min-width: 180px; /* You can adjust this min-width as needed */
+            background-color: var(--white-bg);
+            min-width: 180px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 100; /* Ensure it's above other content */
+            z-index: 100;
             list-style: none;
             padding: 10px 0;
             border-radius: 5px;
@@ -187,18 +215,18 @@
         }
 
         .dropdown-menu li a {
-            color: var(--header-text);
-            padding: 12px 16px; /* Keep original padding */
+            color: var(--dark-text);
+            padding: 12px 16px;
             text-decoration: none;
             display: block;
-            text-align: left; /* *** Reverted to LEFT to match "Soft Washing" in your screenshot *** */
+            text-align: left;
             font-weight: 500;
             font-size: 15px;
         }
 
         .dropdown-menu li a:hover {
             background-color: #f1f1f1;
-            color: var(--header-hover);
+            color: var(--primary-blue);
         }
 
         /* Show dropdown on hover */
@@ -216,7 +244,7 @@
             display: flex;
             align-items: center;
             justify-content: center; /* Center content horizontally */
-            color: var(--hero-text-color);
+            color: var(--white-text);
             text-align: left; /* Align text left within its container */
             overflow: hidden; /* Hide overflow for video */
         }
@@ -229,11 +257,8 @@
             height: 100%;
             object-fit: cover; /* Cover the entire container */
             z-index: 1;
-        }
-        /* Placeholder for video background - replace with actual video tag */
-        .video-background-placeholder {
-            background: url('https://placehold.co/1920x1080/0A60B4/FFFFFF?text=Video+Placeholder') no-repeat center center; /* Placeholder image */
-            background-size: cover;
+            /* Using a generic placeholder for the video background */
+            background: linear-gradient(to right, #0A60B4, #17A18E); /* Example gradient or solid color */
         }
 
 
@@ -284,38 +309,38 @@
             transition: all 0.3s ease;
         }
         .hero-buttons .btn.primary {
-            background-color: var(--button-primary-bg); /* Greenish-blue button */
-            color: var(--button-text);
+            background-color: var(--accent-green); /* Greenish-blue button */
+            color: var(--white-text);
         }
         .hero-buttons .btn.primary:hover {
             background-color: #148f7d; /* Slightly darker green on hover */
         }
         .hero-buttons .btn.secondary {
-            background-color: var(--button-secondary-bg); /* Blue button */
-            color: var(--button-text);
+            background-color: var(--primary-blue); /* Blue button */
+            color: var(--white-text);
         }
         .hero-buttons .btn.secondary:hover {
-            background-color: var(--top-bar-bg); /* Darker blue on hover */
+            background-color: var(--dark-blue); /* Darker blue on hover */
         }
 
         /* 5 Star Services Text Section */
         .five-star-services {
-            background-color: var(--section-bg-light); /* Matches overall page background */
+            background-color: var(--light-bg); /* Matches overall page background */
             padding: 40px 0;
             text-align: center;
             font-size: 22px;
             font-weight: 600;
-            color: var(--text-color-dark);
+            color: var(--dark-text);
             box-shadow: 0 2px 5px rgba(0,0,0,0.03); /* Subtle shadow below it */
         }
 
         /* Our Services Section (New) */
         .our-services-section {
             padding: 80px 0;
-            background-color: var(--light-color); /* White background */
+            background-color: var(--white-bg); /* White background */
         }
         .our-services-section h2 {
-            color: var(--secondary-color);
+            color: var(--dark-blue); /* Changed to a dark blue for headers */
             font-size: 42px;
             margin-bottom: 40px;
             text-align: center;
@@ -330,30 +355,30 @@
             flex: 1;
             min-width: 280px;
             max-width: 350px;
-            background-color: #f9f9f9;
+            background-color: var(--light-bg); /* Use light background for cards */
             border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            box-shadow: var(--shadow-medium);
             padding: 30px;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .service-card-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+            box-shadow: var(--shadow-hover);
         }
         .service-card-item .icon {
             font-size: 50px;
-            color: var(--primary-color);
+            color: var(--accent-green); /* Changed icon color to primary accent green */
             margin-bottom: 20px;
         }
         .service-card-item h3 {
             font-size: 26px;
-            color: var(--secondary-color);
+            color: var(--dark-blue); /* Changed header color to dark blue */
             margin-bottom: 15px;
         }
         .service-card-item p {
             font-size: 17px;
-            color: var(--text-color);
+            color: var(--medium-text);
         }
 
         /* Service Details Section (Existing, renamed class for clarity from .service-section) */
@@ -361,10 +386,16 @@
             padding: 80px 0;
         }
         .service-details-section h2 { /* Targeting the specific H2 */
-            color: var(--secondary-color);
+            color: var(--dark-blue);
             font-size: 42px;
             margin-bottom: 40px;
             text-align: center;
+        }
+        .service-details-section p { /* Style for paragraphs in this section */
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            font-size: 18px;
         }
         .benefits {
             display: flex;
@@ -378,16 +409,26 @@
             min-width: 300px;
             max-width: 350px;
             padding: 30px;
-            border-left: 3px solid var(--primary-color);
-            background: #f9f9f9;
+            border-left: 3px solid var(--accent-green); /* Changed border color to primary accent green */
+            background: var(--light-bg);
             box-shadow: 0 4px 8px rgba(0,0,0,0.05);
         }
         .benefit-card h3 {
-            color: var(--primary-color);
+            color: var(--accent-green); /* Changed header color to primary accent green */
             margin-bottom: 15px;
             font-size: 24px;
         }
         /* Process Section */
+        .process-section { /* Renamed from .service-section for clarity */
+            background: #eef9f8; /* A slightly lighter, greenish tint for this section */
+            padding: 80px 0;
+        }
+        .process-section h2 {
+            color: var(--dark-blue);
+            font-size: 42px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
         .process-steps {
             display: flex;
             flex-wrap: wrap;
@@ -403,8 +444,8 @@
             padding: 20px;
         }
         .step-number {
-            background: var(--primary-color);
-            color: white;
+            background: var(--accent-green); /* Changed step number background to primary accent green */
+            color: var(--white-text);
             width: 50px;
             height: 50px;
             line-height: 50px;
@@ -415,8 +456,14 @@
         }
         /* FAQ Section */
         .faq-section {
-            background: #f5f5f5;
+            background: var(--light-bg); /* Consistent light background */
             padding: 80px 0;
+        }
+        .faq-section h2 {
+            color: var(--dark-blue);
+            font-size: 42px;
+            margin-bottom: 40px;
+            text-align: center;
         }
         .accordion {
             max-width: 800px;
@@ -425,9 +472,9 @@
         .accordion-item {
             margin-bottom: 20px;
             border-bottom: 1px solid #ddd;
-            background-color: var(--light-color);
+            background-color: var(--white-bg); /* White background for accordion items */
             padding: 0 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            box-shadow: var(--shadow-light);
         }
         .accordion-title {
             padding: 20px 0;
@@ -435,7 +482,7 @@
             position: relative;
             font-weight: 600;
             font-size: 22px;
-            color: var(--secondary-color);
+            color: var(--dark-blue);
         }
         .accordion-content {
             padding: 0 0 20px 30px;
@@ -448,7 +495,7 @@
             top: 50%;
             transform: translateY(-50%);
             font-size: 24px;
-            color: var(--primary-color);
+            color: var(--accent-green); /* Changed to primary accent green */
             transition: transform 0.3s ease;
         }
         .accordion-item.active .accordion-content {
@@ -458,14 +505,14 @@
             content: '-';
             transform: translateY(-50%) rotate(0deg);
         }
-        /* CTA Section Styling (from previous version) */
+        /* CTA Section Styling */
         .cta-section {
             padding: 80px 0;
             text-align: center;
-            background-color: var(--section-bg-light); /* Consistent with other light sections */
+            background-color: var(--light-bg); /* Consistent with other light sections */
         }
         .cta-section h2 {
-            color: var(--secondary-color);
+            color: var(--dark-blue);
             font-size: 42px;
             margin-bottom: 20px;
         }
@@ -473,12 +520,26 @@
             font-size: 20px;
             margin-bottom: 30px;
         }
+        .cta-section .btn { /* Styling for the button in CTA */
+            background-color: var(--accent-green);
+            color: var(--white-text);
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+            display: inline-block; /* Ensure padding works */
+        }
+        .cta-section .btn:hover {
+            background-color: #148f7d; /* Darker green on hover */
+        }
 
 
         /* Footer */
         footer {
-            background-color: var(--secondary-color); /* Dark blue footer */
-            color: var(--light-color);
+            background-color: var(--dark-blue); /* Dark blue footer */
+            color: var(--white-text);
             text-align: center;
             padding: 40px 20px;
             font-size: 16px;
@@ -489,17 +550,24 @@
             .hero h1 { font-size: 48px; }
             .hero p { font-size: 28px; }
             .service-card { flex: 0 1 calc(50% - 20px); } /* Adjust gap for smaller screens */
-            .our-services-section h2, .service-details-section h2, .cta-section h2, .faq-section h2 { font-size: 36px; }
+            .our-services-section h2, .service-details-section h2, .cta-section h2, .faq-section h2, .process-section h2 { font-size: 36px; } /* Added process-section h2 */
         }
 
         @media (max-width: 767px) {
-            .top-bar {
-                text-align: center;
-            }
             .top-bar-content {
-                justify-content: center;
+                flex-direction: column; /* Stack back button and contact info */
+                align-items: center;
                 gap: 10px;
+            }
+            .top-bar-contact-info {
+                justify-content: center;
                 flex-wrap: wrap;
+                width: 100%; /* Take full width on small screens */
+            }
+            .back-button {
+                width: 100%; /* Make back button full width on small screens */
+                justify-content: center;
+                margin-bottom: 10px;
             }
             .header-container {
                 flex-direction: column;
@@ -542,7 +610,7 @@
             .service-card-content h3 { font-size: 24px; }
             .service-card-content p { font-size: 16px; }
 
-            .our-services-section h2, .service-details-section h2, .cta-section h2, .faq-section h2 { font-size: 32px; }
+            .our-services-section h2, .service-details-section h2, .cta-section h2, .faq-section h2, .process-section h2 { font-size: 32px; }
             .benefits, .process-steps, .services-grid { flex-direction: column; align-items: center; }
             .benefit-card, .step, .service-card-item { min-width: unset; width: 100%; max-width: 400px; }
         }
@@ -551,7 +619,12 @@
 <body>
     <div class="top-bar">
         <div class="container top-bar-content">
-            <span>Call today for a free estimate | Phone (111) 111-1111</span>
+            <a href="index.html" class="back-button">
+                <i class="fa-solid fa-arrow-left"></i> BACK
+            </a>
+            <div class="top-bar-contact-info">
+                <span>Call today for a free estimate | Phone (111) 111-1111</span>
+            </div>
         </div>
     </div>
 
@@ -566,7 +639,8 @@
                 <ul>
                     <li><a href="index.html" class="active">Home</a></li>
                     <li class="dropdown">
-                        <a href="services.html">Services</a> <ul class="dropdown-menu">
+                        <a href="services.html">Services</a>
+                        <ul class="dropdown-menu">
                             <li><a href="Soft Washing Services.html">Soft Washing</a></li>
                             <li><a href="Pressure Washing Services.html">Pressure Washing</a></li>
                             <li><a href="Solar Panel Cleaning Services.html">Solar Panel Cleaning</a></li>
@@ -574,7 +648,8 @@
                             <li><a href="Gutter Cleaning Services.html">Gutter Cleaning</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Service Area</a></li> <li><a href="#">About</a></li>
+                    <li><a href="#">Service Area</a></li>
+                    <li><a href="#">About</a></li>
                     <li><a href="#" class="nav-button"><i class="fa-regular fa-comment-dots"></i> CHAT US</a></li>
                     <li><a href="mailto:info@eastsidesoftwash.com" class="nav-button"><i class="fa-regular fa-envelope"></i> EMAIL US</a></li>
                 </ul>
@@ -583,7 +658,7 @@
     </header>
 
     <section class="hero">
-        <div class="video-background video-background-placeholder"></div>
+        <div class="video-background"></div>
 
         <div class="container hero-content">
             <h1>PROFESSIONAL ROOF, WINDOW & GUTTER CLEANING</h1>
@@ -648,12 +723,12 @@
                 <div class="benefit-card">
                     <h3>Improve Curb Appeal</h3>
                     <p>Restore your roof's original appearance and increase your home's value.</p>
-                </div>
+                C</div>
             </div>
         </div>
     </section>
 
-    <section class="service-section" style="background: #eef9f8;">
+    <section class="process-section">
         <div class="container">
             <h2>Our Roof Cleaning Process</h2>
 
@@ -705,7 +780,7 @@
                     <div class="accordion-title">Do you offer moss prevention treatments?</div>
                     <div class="accordion-content">
                         <p>Yes, we apply zinc-based preventative treatments after cleaning that inhibit moss and algae growth for 12-24 months. This is highly recommended to extend time between cleanings.</p>
-                    </div>
+                    C</div>
                 </div>
 
                 <div class="accordion-item">
@@ -726,7 +801,7 @@
         </div>
     </section>
 
-    <footer style="background-color: var(--secondary-color); color: var(--light-color); text-align: center; padding: 40px 20px; font-size: 16px;">
+    <footer>
         <div class="container">
             <p>&copy; 2025 Eastside Softwash. All rights reserved.</p>
         </div>
