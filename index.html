@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Choose your softwash service type. Eastside Softwash delivers premium commercial and residential exterior cleaning." />
   <title>Eastside Softwash</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
@@ -16,8 +17,14 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      min-height: 100vh;
       text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     h1 {
@@ -26,10 +33,16 @@
       letter-spacing: 1px;
     }
 
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
     .button-container {
       display: flex;
       gap: 30px;
-      margin-top: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     .option-button {
@@ -61,8 +74,8 @@
   <h1>Welcome to Eastside Softwash</h1>
   <p>Select your service type to continue</p>
   <div class="button-container">
-    <a href="/commercial/com_home.html" class="option-button">Commercial</a>
-    <a href="/residential/res_home.html" class="option-button">Residential</a>
+    <a href="commercial/com_home.html" class="option-button" aria-label="Commercial Services">Commercial</a>
+    <a href="residential/res_home.html" class="option-button" aria-label="Residential Services">Residential</a>
   </div>
 </body>
 </html>
