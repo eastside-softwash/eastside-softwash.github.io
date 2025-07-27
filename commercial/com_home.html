@@ -1,1211 +1,606 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
   <meta charset="UTF-8" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Commercial Softwash Services – Eastside Softwash</title>
-
   <link rel="stylesheet" href="css/style.css" />
-
   <style>
-
     body {
-
       margin: 0;
-
       font-family: Arial, sans-serif;
-
       background-color: #0f2027;
-
       color: #f0f0f0;
-
       line-height: 1.6;
-
     }
-
-
 
     /* General Section Padding */
-
     section {
-
       padding: 60px 20px;
-
       max-width: 1000px;
-
       margin: 0 auto;
-
     }
-
-
 
     /* Hero Section */
-
     header.hero {
-
       background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
-
       padding: 80px 20px;
-
       text-align: center;
-
       color: #f0f0f0;
-
     }
-
-
 
     header.hero h1 {
-
       font-size: 3.2rem;
-
       margin-bottom: 15px;
-
       line-height: 1.2;
-
     }
-
-
 
     header.hero p {
-
       font-size: 1.3rem;
-
       margin-bottom: 30px;
-
       max-width: 700px;
-
       margin-left: auto;
-
       margin-right: auto;
-
     }
-
-
 
     .cta-button {
-
       display: inline-block;
-
       padding: 15px 35px;
-
       font-size: 1.1rem;
-
       border: none;
-
       background-color: #00ffff;
-
       color: #001f2f;
-
       text-decoration: none;
-
       border-radius: 88px;
-
       transition: all 0.3s ease;
-
       font-weight: bold;
-
       text-transform: uppercase;
-
       letter-spacing: 1px;
-
     }
-
-
 
     .cta-button:hover {
-
       box-shadow: 0 0 20px #00ffff;
-
       transform: translateY(-2px);
-
     }
-
-
 
     /* Features Section */
-
     .features ul {
-
       list-style: none;
-
       padding: 0;
-
       display: grid;
-
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-
       gap: 25px;
-
       margin-top: 40px;
-
     }
-
-
 
     .features ul li {
-
       background-color: #1a2a33;
-
       padding: 25px;
-
       border-radius: 10px;
-
       font-size: 1.1rem;
-
       font-weight: bold;
-
       display: flex;
-
       align-items: center;
-
       gap: 15px;
-
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-
     }
-
-
 
     .features ul li::before {
-
       content: '✅'; /* Green checkmark */
-
       font-size: 1.5em;
-
       line-height: 1;
-
     }
-
-
 
     /* Services Grid */
-
     .services-grid {
-
       display: grid;
-
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-
       gap: 30px;
-
       margin-top: 40px;
-
     }
-
-
 
     .service-card {
-
       background-color: #1c1c1c;
-
       padding: 30px;
-
       border-radius: 10px;
-
       text-align: center;
-
       transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-
     }
-
-
 
     .service-card:hover {
-
       background-color: #2e2e2e;
-
       transform: translateY(-5px);
-
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-
     }
-
-
 
     .service-card h3 {
-
       font-size: 1.6rem;
-
       margin-bottom: 15px;
-
       color: #00ffff;
-
     }
-
-
 
     .service-card p {
-
       font-size: 0.95rem;
-
       margin-bottom: 20px;
-
       color: #ccc;
-
     }
-
-
 
     .service-card a {
-
       display: inline-block;
-
       color: #00ffff;
-
       text-decoration: none;
-
       font-weight: bold;
-
       border: 2px solid #00ffff;
-
       padding: 8px 15px;
-
       border-radius: 5px;
-
       transition: background-color 0.3s ease, color 0.3s ease;
-
     }
-
-
 
     .service-card a:hover {
-
       background-color: #00ffff;
-
       color: #001f2f;
-
     }
-
-
 
     /* Why Choose Us */
-
     .why-choose-us .points {
-
       display: grid;
-
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-
       gap: 30px;
-
       margin-top: 40px;
-
     }
-
-
 
     .why-choose-us .point-item {
-
       background-color: #1a2a33;
-
       padding: 25px;
-
       border-radius: 10px;
-
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-
     }
-
-
 
     .why-choose-us .point-item h3 {
-
       color: #00ffff;
-
       margin-top: 0;
-
       font-size: 1.4rem;
-
     }
-
-
 
     /* Testimonial Section */
-
     .testimonial {
-
       background-color: #1c1c1c;
-
       padding: 50px 30px;
-
       border-radius: 10px;
-
       text-align: center;
-
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-
       margin-top: 60px; /* Separates from previous section */
-
     }
-
-
 
     blockquote {
-
       font-style: italic;
-
       font-size: 1.3rem;
-
       border-left: 5px solid #00ffff;
-
       padding-left: 20px;
-
       margin: 30px auto;
-
       max-width: 700px;
-
       line-height: 1.8;
-
       color: #e0e0e0;
-
     }
-
-
 
     cite {
-
       display: block;
-
       font-size: 1.1rem;
-
       margin-top: 15px;
-
       color: #aaa;
-
     }
-
-
 
     /* Gallery Section */
-
     .gallery-grid {
-
       display: grid;
-
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-
       gap: 20px;
-
       margin-top: 40px;
-
     }
-
-
 
     .gallery-item img {
-
       width: 100%;
-
       height: 200px;
-
       object-fit: cover;
-
       border-radius: 8px;
-
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-
       transition: transform 0.3s ease;
-
     }
-
-
 
     .gallery-item img:hover {
-
       transform: scale(1.03);
-
     }
-
-
 
     /* Properties We Service */
-
     .property-types ul {
-
       list-style: none;
-
       padding: 0;
-
       display: grid;
-
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-
       gap: 20px;
-
       margin-top: 30px;
-
     }
-
-
 
     .property-types ul li {
-
       background-color: #1a2a33;
-
       padding: 15px;
-
       border-radius: 8px;
-
       text-align: center;
-
       font-weight: bold;
-
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
     }
-
-
 
     /* FAQ Section */
-
     .faq-item {
-
       background-color: #1c1c1c;
-
       margin-bottom: 15px;
-
       border-radius: 8px;
-
       overflow: hidden;
-
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
     }
-
-
 
     .faq-question {
-
       padding: 20px;
-
       background-color: #2e2e2e;
-
       cursor: pointer;
-
       display: flex;
-
       justify-content: space-between;
-
       align-items: center;
-
       font-weight: bold;
-
       font-size: 1.1rem;
-
       transition: background-color 0.3s ease;
-
     }
-
-
 
     .faq-question:hover {
-
       background-color: #3a3a3a;
-
     }
-
-
 
     .faq-question::after {
-
       content: '+';
-
       font-size: 1.5rem;
-
       transition: transform 0.3s ease;
-
     }
-
-
 
     .faq-question.active::after {
-
       transform: rotate(45deg);
-
     }
-
-
 
     .faq-answer {
-
       padding: 0 20px;
-
       max-height: 0;
-
       overflow: hidden;
-
       transition: max-height 0.4s ease-out, padding 0.4s ease-out;
-
       background-color: #1c1c1c;
-
       color: #ccc;
-
     }
-
-
 
     .faq-answer p {
-
       padding-bottom: 20px;
-
       margin: 0;
-
     }
-
-
 
     /* Contact Form Section */
-
     .contact-form-container {
-
       background-color: #1c1c1c;
-
       padding: 40px;
-
       border-radius: 10px;
-
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-
     }
-
-
 
     .contact-form-container h2 {
-
       text-align: center;
-
       margin-bottom: 30px;
-
       color: #00ffff;
-
       font-size: 2rem;
-
     }
-
-
 
     .contact-form label {
-
       display: block;
-
       margin-bottom: 8px;
-
       font-weight: bold;
-
     }
-
-
 
     .contact-form input[type="text"],
-
     .contact-form input[type="email"],
-
     .contact-form input[type="tel"],
-
     .contact-form textarea {
-
       width: calc(100% - 20px);
-
       padding: 12px;
-
       margin-bottom: 20px;
-
       border: 1px solid #333;
-
       border-radius: 5px;
-
       background-color: #2e2e2e;
-
       color: #f0f0f0;
-
       font-size: 1rem;
-
     }
-
-
 
     .contact-form textarea {
-
       resize: vertical;
-
       min-height: 100px;
-
     }
-
-
 
     .contact-form button {
-
       display: block;
-
       width: 100%;
-
       padding: 15px;
-
       background-color: #00ffff;
-
       color: #001f2f;
-
       border: none;
-
       border-radius: 8px;
-
       font-size: 1.2rem;
-
       font-weight: bold;
-
       cursor: pointer;
-
       transition: background-color 0.3s ease, box-shadow 0.3s ease;
-
     }
-
-
 
     .contact-form button:hover {
-
       background-color: #00e6e6;
-
       box-shadow: 0 0 15px #00ffff;
-
     }
-
-
 
     /* Footer */
-
     footer {
-
       background-color: #111;
-
       padding: 30px;
-
       text-align: center;
-
       font-size: 0.95rem;
-
       border-top: 1px solid #2e2e2e;
-
     }
-
-
 
     footer a {
-
       color: #00ffff;
-
       text-decoration: none;
-
       margin: 0 10px;
-
     }
-
-
 
     footer a:hover {
-
       text-decoration: underline;
-
     }
-
-
 
     /* Top Back Button Styling - Adjusted for top-right */
-
     .top-back-button-container {
-
       text-align: right; /* Aligns the button to the right */
-
       padding: 20px; /* Add some padding around the button */
-
     }
-
-
 
     .top-back-button {
-
       display: inline-block;
-
       padding: 10px 20px;
-
       font-size: 1rem;
-
       border: 2px solid #00ffff;
-
       background-color: transparent;
-
       color: #00ffff;
-
       text-decoration: none;
-
       border-radius: 8px;
-
       transition: background-color 0.3s ease, color 0.3s ease;
-
     }
-
-
 
     .top-back-button:hover {
-
       background-color: #00ffff;
-
       color: #001f2f;
-
     }
-
   </style>
-
 </head>
-
 <body>
 
-
-
   <div class="top-back-button-container">
-
     <a href="../index.html" class="top-back-button">← Back to Home</a>
-
   </div>
 
-
-
   <header class="hero">
-
-    <h1>Premier Commercial Softwashing & Exterior Cleaning for Kenmore Businesses</h1>
-
-    <p>Elevate your business's curb appeal and protect your investment. Eastside Softwash delivers unparalleled cleaning solutions tailored for commercial properties in Kenmore and beyond.</p>
-
-    <a href="#contact" class="cta-button">Get Your Free Commercial Quote</a>
-
+    <h1>Premier Commercial Exterior Cleaning for Washington Businesses</h1>
+    <p>Enhance your business's appeal and preserve your investment. Eastside Softwash provides professional, comprehensive exterior cleaning solutions for commercial properties across Washington.</p>
+    <a href="#contact" class="cta-button">Request Your Commercial Quote</a>
   </header>
 
-
-
   <section class="features">
-
-    <h2>Why Kenmore Businesses Choose Eastside Softwash</h2>
-
+    <h2>Why Washington Businesses Partner with Eastside Softwash</h2>
     <ul>
-
-      <li>**Licensed & Insured Professionals**: Your peace of mind is our priority. We are fully licensed and insured, ensuring a safe and reliable service every time.</li>
-
-      <li>**Eco-Friendly Cleaning Solutions**: We use biodegradable and environmentally safe products that are tough on grime but gentle on your property and the planet.</li>
-
-      <li>**Flexible Scheduling for Minimal Disruption**: We work around your business hours, offering evening and weekend appointments to ensure seamless operations and zero downtime.</li>
-
-      <li>**Guaranteed Satisfaction**: Our job isn't done until you're absolutely thrilled with the results. We stand behind the quality of our work.</li>
-
-      <li>**Experienced & Local Experts**: As a local Kenmore company, we understand the specific challenges and needs of businesses in our community.</li>
-
-      <li>**Comprehensive Property Protection**: Our soft washing methods not greatly clean but also protect surfaces, extending their lifespan and preventing costly repairs.</li>
-
+      <li>**Licensed & Insured Expertise**: We are fully licensed and insured, offering you complete peace of mind and reliable service.</li>
+      <li>**Environmentally Responsible Methods**: Our cleaning solutions are biodegradable and safe for your property's surfaces and the surrounding environment.</li>
+      <li>**Flexible Scheduling for Business Continuity**: We work around your operational hours, including evenings and weekends, to ensure minimal disruption to your business.</li>
+      <li>**Guaranteed Service Excellence**: Your satisfaction is our benchmark. We are committed to delivering exceptional results on every project.</li>
+      <li>**Local Knowledge & Dedicated Service**: As a local Washington business, we understand the specific challenges and maintenance needs of commercial properties in our state.</li>
+      <li>**Protective & Restorative Cleaning**: Our methods not only clean thoroughly but also help protect and extend the lifespan of your property's exterior surfaces.</li>
     </ul>
-
   </section>
 
-
-
   <hr>
-
-
 
   <section class="services-grid">
-
-    <h2>Our Comprehensive Commercial Cleaning Services</h2>
-
+    <h2>Our Comprehensive Commercial Exterior Cleaning Services</h2>
     <div class="service-card">
-
       <h3>Soft Washing</h3>
-
-      <p>Gentle yet powerful, soft washing safely removes mold, mildew, algae, and dirt from delicate surfaces like stucco, EIFS, and painted exteriors without damage.</p>
-
+      <p>A low-pressure cleaning method, ideal for safely removing organic growth and discoloration from delicate surfaces like stucco, EIFS, and painted exteriors.</p>
       <a href="/commercial/softwash.html">Learn More</a>
-
     </div>
-
     <div class="service-card">
-
       <h3>Pressure Washing</h3>
-
-      <p>For tougher surfaces like concrete sidewalks, driveways, and brick, our professional pressure washing blasts away deep-seated dirt, oil stains, and graffiti.</p>
-
+      <p>High-pressure cleaning for robust surfaces such as concrete, brick, and paving, effectively eliminating tough dirt, oil stains, and graffiti.</p>
       <a href="/commercial/pressurewashing.html">Learn More</a>
-
     </div>
-
     <div class="service-card">
-
       <h3>Window Cleaning</h3>
-
-      <p>Achieve crystal-clear, streak-free windows that enhance your business's appearance and allow natural light to flood your interiors. First impressions matter!</p>
-
+      <p>Achieve spotless, streak-free windows that enhance your property's appearance and maximize natural light within your commercial space.</p>
       <a href="/commercial/windowcleaning.html">Learn More</a>
-
     </div>
-
     <div class="service-card">
-
       <h3>Gutter Maintenance</h3>
-
-      <p>Prevent water damage and maintain proper drainage with our thorough gutter cleaning and maintenance services, crucial for protecting your building's foundation.</p>
-
+      <p>Essential services to prevent water damage and ensure efficient drainage, protecting your building's foundation and structural integrity.</p>
       <a href="/commercial/guttermaintenance.html">Learn More</a>
-
     </div>
-
     <div class="service-card">
-
       <h3>Solar Panel Cleaning</h3>
-
-      <p>Maximize your energy efficiency. Our specialized cleaning removes dirt and debris from solar panels, ensuring they perform at their peak capacity.</p>
-
+      <p>Specialized cleaning to remove efficiency-reducing contaminants from solar panels, ensuring peak energy production and return on investment.</p>
       <a href="/commercial/solarpanelcleaning.html">Learn More</a>
-
     </div>
-
     <div class="service-card">
-
-        <h3>Building & Storefront Cleaning</h3>
-
-        <p>From retail shops to office buildings, we make your entire commercial facade shine, attracting more customers and creating a positive image.</p>
-
+        <h3>Building & Storefront Facade Cleaning</h3>
+        <p>Comprehensive cleaning for your entire commercial facade, from retail entrances to office exteriors, projecting a professional and inviting image.</p>
         <a href="/commercial/building.html">Learn More</a>
-
       </div>
-
   </section>
 
-
-
   <hr>
-
-
 
   <section class="property-types">
-
-    <h2>Properties We Service</h2>
-
-    <p style="text-align: center; font-size: 1.1rem; margin-bottom: 30px;">Eastside Softwash is equipped to handle a wide range of commercial properties in the Kenmore area:</p>
-
+    <h2>Commercial Properties We Service Across Washington</h2>
+    <p style="text-align: center; font-size: 1.1rem; margin-bottom: 30px;">Eastside Softwash is equipped to provide expert exterior cleaning for a diverse range of commercial properties throughout Washington State:</p>
     <ul>
-
-      <li>Retail Stores & Shopping Centers</li>
-
-      <li>Office Buildings & Business Parks</li>
-
-      <li>Restaurants & Cafes</li>
-
-      <li>Apartment Complexes & HOAs</li>
-
-      <li>Warehouses & Industrial Facilities</li>
-
-      <li>Medical Offices & Clinics</li>
-
-      <li>Schools & Educational Facilities</li>
-
-      <li>Hotels & Hospitality Venues</li>
-
-      <li>Gas Stations & Auto Dealerships</li>
-
-      <li>Community Centers & Public Buildings</li>
-
+      <li>Retail Centers & Strip Malls</li>
+      <li>Corporate & Professional Office Buildings</li>
+      <li>Restaurants & Food Service Establishments</li>
+      <li>Multi-Family Residential & HOAs</li>
+      <li>Industrial & Warehouse Facilities</li>
+      <li>Healthcare Facilities & Medical Offices</li>
+      <li>Educational Campuses & Schools</li>
+      <li>Hotels & Lodging Properties</li>
+      <li>Automotive Dealerships & Service Centers</li>
+      <li>Government & Public Sector Buildings</li>
     </ul>
-
   </section>
 
-
-
   <hr>
-
-
 
   <section class="gallery">
-
-    <h2 style="text-align: center;">Our Work in Action: Commercial Transformations</h2>
-
-    <p style="text-align: center; font-size: 1.1rem; margin-bottom: 30px;">See the dramatic difference Eastside Softwash makes for businesses like yours.</p>
-
+    <h2 style="text-align: center;">Our Commercial Project Portfolio</h2>
+    <p style="text-align: center; font-size: 1.1rem; margin-bottom: 30px;">Witness the significant impact Eastside Softwash achieves for businesses throughout Washington.</p>
     <div class="gallery-grid">
-
       <div class="gallery-item"><img src="images/commercial-before-after-1.jpg" alt="Commercial Building Before Softwash"></div>
-
       <div class="gallery-item"><img src="images/commercial-before-after-2.jpg" alt="Cleaned Storefront After Softwash"></div>
-
       <div class="gallery-item"><img src="images/commercial-before-after-3.jpg" alt="Office Building Pressure Washing"></div>
-
       <div class="gallery-item"><img src="images/commercial-before-after-4.jpg" alt="Clean Solar Panels"></div>
-
       <div class="gallery-item"><img src="images/commercial-before-after-5.jpg" alt="Clean Gutter System"></div>
-
       <div class="gallery-item"><img src="images/commercial-before-after-6.jpg" alt="Sparkling Clean Windows"></div>
-
     </div>
-
     <div style="text-align: center; margin-top: 40px;">
-
-      <a href="gallery.html" class="cta-button">View Full Portfolio</a>
-
+      <a href="gallery.html" class="cta-button">View Our Full Portfolio</a>
     </div>
-
   </section>
 
-
-
   <hr>
-
-
 
   <section class="testimonial">
-
-    <h2>What Our Commercial Clients Say</h2>
+    <h2>Client Testimonials: Trusted by Washington Businesses</h2>
+    <blockquote>
+      "Eastside Softwash completely revitalized our storefront. Their team was efficient, highly professional, and delivered exactly the pristine look we needed to impress our customers. An invaluable service for any Washington business!"
+    </blockquote>
+    <cite>— Madison Greene, Retail Manager, Seattle</cite>
 
     <blockquote>
-
-      "Eastside Softwash transformed our storefront overnight. Their team was incredibly fast, professional, and delivered exactly what we needed to make a fantastic first impression on our customers. Highly recommended for any business in Kenmore!"
-
+      "We've consistently relied on Eastside Softwash for our corporate office's exterior maintenance. Their reliability and the thoroughness of their soft washing service ensure our building always presents its best image. A truly dependable partner."
     </blockquote>
-
-    <cite>— Madison Greene, Retail Manager, Kenmore</cite>
-
-
-
-    <blockquote>
-
-      "We've been using Eastside Softwash for our office building's exterior cleaning for years. They are consistently reliable, thorough, and their soft washing service keeps our building looking brand new without any damage. A true partner!"
-
-    </blockquote>
-
-    <cite>— David Chen, Property Manager, Bothell</cite>
-
+    <cite>— David Chen, Property Manager, Bellevue</cite>
   </section>
 
-
-
   <hr>
-
-
 
   <section class="faq">
-
-    <h2 style="text-align: center;">Frequently Asked Questions About Commercial Softwashing</h2>
-
+    <h2 style="text-align: center;">Frequently Asked Questions About Commercial Exterior Cleaning</h2>
     <div class="faq-item">
-
-      <div class="faq-question">What is the difference between soft washing and pressure washing?</div>
-
+      <div class="faq-question">What distinguishes soft washing from pressure washing?</div>
       <div class="faq-answer">
-
-        <p><strong>Soft washing</strong> uses low pressure combined with specialized cleaning solutions to safely remove organic growth (algae, mold, mildew) and dirt from delicate surfaces like stucco, EIFS, painted wood, and siding. It's ideal for surfaces that could be damaged by high pressure. <strong>Pressure washing</strong> uses high-pressure water streams to tackle tougher surfaces like concrete, brick, and pavers, effectively removing stubborn stains and grime.</p>
-
+        <p><strong>Soft washing</strong> employs low-pressure water combined with specialized, eco-friendly cleaning solutions. This method is ideal for gently and effectively removing organic growth (like algae, mold, and mildew) and dirt from delicate surfaces such as stucco, EIFS, painted wood, and siding, preventing damage often associated with high pressure. <strong>Pressure washing</strong> utilizes high-pressure water streams and is reserved for more durable surfaces like concrete, brick, and pavers to remove stubborn grime, oil stains, and graffiti.</p>
       </div>
-
     </div>
-
     <div class="faq-item">
-
-      <div class="faq-question">How often should a commercial property be soft washed?</div>
-
+      <div class="faq-question">What is the recommended frequency for commercial exterior cleaning?</div>
       <div class="faq-answer">
-
-        <p>The frequency depends on several factors, including your property's location, exposure to elements, surrounding vegetation, and business type. Generally, we recommend a professional soft wash every 12-24 months to maintain optimal appearance and prevent long-term damage. We can create a customized maintenance plan for your business.</p>
-
+        <p>The optimal cleaning schedule for your commercial property depends on various factors, including its geographical location, exposure to environmental elements, proximity to vegetation, and the nature of your business operations. Typically, we advise professional exterior cleaning every 12-24 months to maintain optimal appearance and prevent long-term surface degradation. We are happy to develop a tailored maintenance plan specific to your business needs.</p>
       </div>
-
     </div>
-
     <div class="faq-item">
-
-      <div class="faq-question">Are your cleaning solutions safe for landscaping and the environment?</div>
-
+      <div class="faq-question">Are your cleaning solutions safe for surrounding landscapes and the environment?</div>
       <div class="faq-answer">
-
-        <p>Yes! We prioritize the safety of your landscaping, employees, customers, and the environment. Our cleaning solutions are professional-grade, biodegradable, and designed to be safe when applied correctly. We take precautions to protect surrounding plants and areas.</p>
-
+        <p>Yes, absolutely. We prioritize the health of your landscaping, the safety of your employees and customers, and environmental responsibility. Our professional-grade cleaning solutions are biodegradable and formulated to be safe when applied according to industry best practices. We implement thorough protective measures for all surrounding plants and vulnerable areas during our cleaning processes.</p>
       </div>
-
     </div>
-
     <div class="faq-item">
-
-      <div class="faq-question">Do you offer ongoing maintenance contracts?</div>
-
+      <div class="faq-question">Do you offer ongoing maintenance agreements for businesses?</div>
       <div class="faq-answer">
-
-        <p>Absolutely! Many commercial clients opt for our recurring maintenance plans, which ensure your property consistently looks its best without you having to remember to schedule services. We can tailor a plan to fit your specific needs and budget.</p>
-
+        <p>Indeed! Many of our commercial clients opt for our convenient recurring maintenance contracts. These plans ensure your property consistently maintains a pristine appearance without the need for manual scheduling. We can customize a maintenance plan to align perfectly with your specific requirements and budgetary considerations.</p>
       </div>
-
     </div>
-
     <div class="faq-item">
-
-      <div class="faq-question">How quickly can you provide a quote and start service?</div>
-
+      <div class="faq-question">What is your typical response time for quotes and service initiation?</div>
       <div class="faq-answer">
-
-        <p>We pride ourselves on responsive service. Once you contact us, we'll gather the necessary information to provide a detailed, no-obligation quote. For most commercial properties, we can schedule an assessment and provide a quote within 24-48 hours, with service initiation often possible within the week, depending on your availability.</p>
-
+        <p>We are dedicated to prompt and efficient service. Upon receiving your inquiry, we will gather the necessary details to provide you with a comprehensive, no-obligation quote. For most commercial properties, we aim to complete an assessment and deliver a quote within 24-48 hours. Service can often commence within a week, depending on your business's scheduling flexibility.</p>
       </div>
-
     </div>
-
   </section>
-
-
 
   <hr>
 
-
-
   <section id="contact" class="contact-form-container">
-
-    <h2>Request Your Free Commercial Softwash Quote Today!</h2>
-
-    <p style="text-align: center; margin-bottom: 30px; font-size: 1.1rem; color: #ccc;">Ready to enhance your business's image and protect your investment? Fill out the form below, and our team will get back to you promptly with a customized quote.</p>
-
+    <h2>Request Your Complimentary Commercial Exterior Cleaning Quote Today!</h2>
+    <p style="text-align: center; margin-bottom: 30px; font-size: 1.1rem; color: #ccc;">Ready to elevate your business's curb appeal and safeguard your property? Complete the form below, and our team will promptly provide you with a tailored quote.</p>
     <form class="contact-form" action="submit-form.php" method="POST">
-
       <label for="business-name">Business Name:</label>
-
       <input type="text" id="business-name" name="business_name" required>
 
-
-
       <label for="contact-person">Contact Person:</label>
-
       <input type="text" id="contact-person" name="contact_person" required>
 
-
-
       <label for="email">Email Address:</label>
-
       <input type="email" id="email" name="email" required>
 
-
-
       <label for="phone">Phone Number:</label>
-
       <input type="tel" id="phone" name="phone">
 
-
-
       <label for="property-address">Property Address (or Cross Streets):</label>
-
       <input type="text" id="property-address" name="property_address" required>
 
-
-
       <label for="service-interest">Interested Services:</label>
-
       <select id="service-interest" name="service_interest" required style="width: calc(100% - 20px); padding: 12px; margin-bottom: 20px; border: 1px solid #333; border-radius: 5px; background-color: #2e2e2e; color: #f0f0f0; font-size: 1rem;">
-
         <option value="">Select a Service</option>
-
         <option value="Soft Washing">Soft Washing</option>
-
         <option value="Pressure Washing">Pressure Washing</option>
-
         <option value="Window Cleaning">Window Cleaning</option>
-
         <option value="Gutter Maintenance">Gutter Maintenance</option>
-
         <option value="Solar Panel Cleaning">Solar Panel Cleaning</option>
-
-        <option value="Building & Storefront Cleaning">Building & Storefront Cleaning</option>
-
+        <option value="Building & Storefront Cleaning">Building & Storefront Facade Cleaning</option>
         <option value="Multiple Services">Multiple Services / Full Exterior Clean</option>
-
         <option value="Other">Other (Please specify below)</option>
-
       </select>
 
-
-
       <label for="message">Tell Us About Your Needs (Optional):</label>
-
       <textarea id="message" name="message" placeholder="e.g., specific areas of concern, best time to contact, desired service date"></textarea>
 
-
-
       <button type="submit">Submit Request</button>
-
     </form>
-
     <p style="text-align: center; margin-top: 20px; font-size: 0.95rem;">You can also call us directly at <a href="tel:YOUR_PHONE_NUMBER" style="color: #00ffff; text-decoration: underline;">(555) 123-4567</a> for immediate assistance.</p>
-
   </section>
 
-
-
   <footer>
-
     <p>&copy; 2025 Eastside Softwash. All rights reserved.</p>
-
     <p>
-
       <a href="privacy-policy.html">Privacy Policy</a> |
-
       <a href="terms-of-service.html">Terms of Service</a> |
-
       <a href="sitemap.html">Sitemap</a>
-
     </p>
-
     <a href="../index.html">← Back to Home</a>
-
   </footer>
 
-
-
   <script>
-
     // FAQ Accordion Functionality
-
     document.querySelectorAll('.faq-question').forEach(button => {
-
       button.addEventListener('click', () => {
-
         const faqAnswer = button.nextElementSibling;
-
         button.classList.toggle('active');
 
-
-
         if (button.classList.contains('active')) {
-
           faqAnswer.style.maxHeight = faqAnswer.scrollHeight + "px";
-
           faqAnswer.style.paddingTop = "20px";
-
           faqAnswer.style.paddingBottom = "20px";
-
         } else {
-
           faqAnswer.style.maxHeight = null;
-
           faqAnswer.style.paddingTop = "0";
-
           faqAnswer.style.paddingBottom = "0";
-
         }
-
       });
-
     });
-
   </script>
 
-
-
 </body>
-
-</html> 
+</html>
