@@ -1,1 +1,79 @@
-<html><head><title>About</title></head><body><h1>About Us</h1></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Eastside Softwash</title>
+    <meta name="description" content="Learn about Eastside Softwash's mission to provide quality exterior cleaning services while giving back to the community.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="donation-bar">
+        💰 Donations Raised: $0 / $1000
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo-text">
+                EASTSIDE<br>SOFTWASH
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="donation.html">Donations</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="content">
+        <h1>About Us</h1>
+        <p>We proudly serve Redmond and the surrounding area, delivering real, visible results through affordable power washing services. We also give back — 5% of all profit is donated to local animal shelters, and we provide proof of donation to every client.</p>
+        
+        <p>We are industry leaders in customer satisfaction and ethical business practices. Our mission is to be of service to our customers and our community.</p>
+        
+        <p>We are an owner-operated exterior cleaning company with a mission to give the best quality service to our customers and give back to the communities and help make them a better place one job at a time. After every service, you will receive an email with our donation to local charities as a part of our service.</p>
+        
+        <div class="services-grid">
+            <div class="service-card-item">
+                <div class="icon"><i class="fa-solid fa-handshake"></i></div>
+                <h3>Community Focused</h3>
+                <p>5% of all profits donated to local animal shelters with proof provided to every client.</p>
+            </div>
+            <div class="service-card-item">
+                <div class="icon"><i class="fa-solid fa-star"></i></div>
+                <h3>Quality Service</h3>
+                <p>Industry leaders in customer satisfaction and ethical business practices.</p>
+            </div>
+            <div class="service-card-item">
+                <div class="icon"><i class="fa-solid fa-home"></i></div>
+                <h3>Local Expertise</h3>
+                <p>Owner-operated company serving Redmond and surrounding areas with personalized service.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Eastside Softwash | Built for results, backed by trust.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Donation progress
+        const donationsRaised = 0;
+        const donationGoal = 1000;
+        const percent = Math.min((donationsRaised / donationGoal) * 100, 100);
+        document.getElementById("progressBar").style.width = percent + "%";
+    </script>
+</body>
+</html>

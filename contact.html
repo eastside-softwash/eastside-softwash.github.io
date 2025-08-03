@@ -1,1 +1,125 @@
-<html><head><title>Contact</title></head><body><h1>Contact Us</h1></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Eastside Softwash</title>
+    <meta name="description" content="Contact Eastside Softwash for a free estimate on exterior cleaning services. Serving Greater Seattle & Portland.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="donation-bar">
+        💰 Donations Raised: $0 / $1000
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo-text">
+                EASTSIDE<br>SOFTWASH
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="donation.html">Donations</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="content">
+        <h1>Get in Touch</h1>
+        
+        <div class="contact-form">
+            <h2>Request a Free Estimate</h2>
+            <form>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required />
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" />
+
+                <label for="service">Service Needed</label>
+                <select id="service" name="service">
+                    <option value="">Select a service</option>
+                    <option value="soft-washing">Soft Washing</option>
+                    <option value="pressure-washing">Pressure Washing</option>
+                    <option value="window-cleaning">Window Cleaning</option>
+                    <option value="gutter-cleaning">Gutter Cleaning</option>
+                    <option value="solar-panel-cleaning">Solar Panel Cleaning</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..."></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
+            <div style="background: var(--white-bg); padding: 1.5rem; border-radius: 8px; box-shadow: var(--shadow-medium); text-align: center;">
+                <i class="fa-solid fa-envelope" style="font-size: 2rem; color: var(--accent-green); margin-bottom: 1rem;"></i>
+                <h3 style="color: var(--primary-blue); margin-bottom: 0.5rem;">Email</h3>
+                <p><a href="mailto:info@eastside-softwash.com" style="color: var(--medium-text); text-decoration: none;">info@eastside-softwash.com</a></p>
+            </div>
+            
+            <div style="background: var(--white-bg); padding: 1.5rem; border-radius: 8px; box-shadow: var(--shadow-medium); text-align: center;">
+                <i class="fa-solid fa-phone" style="font-size: 2rem; color: var(--accent-green); margin-bottom: 1rem;"></i>
+                <h3 style="color: var(--primary-blue); margin-bottom: 0.5rem;">Phone</h3>
+                <p><a href="tel:4255551234" style="color: var(--medium-text); text-decoration: none;">(425) 555-1234</a></p>
+            </div>
+            
+            <div style="background: var(--white-bg); padding: 1.5rem; border-radius: 8px; box-shadow: var(--shadow-medium); text-align: center;">
+                <i class="fa-solid fa-map-marker-alt" style="font-size: 2rem; color: var(--accent-green); margin-bottom: 1rem;"></i>
+                <h3 style="color: var(--primary-blue); margin-bottom: 0.5rem;">Service Area</h3>
+                <p>Greater Seattle & Portland</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 2rem; background: var(--white-bg); padding: 1rem; border-radius: 8px; box-shadow: var(--shadow-medium);">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2689.5224101293456!2d-122.1215122843713!3d47.67398897918573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5490137b2e832fc3%3A0x1c6e1cb2199f40ba!2sRedmond%2C%20WA!5e0!3m2!1sen!2sus!4v1692100093840!5m2!1sen!2sus"
+                width="100%" height="300" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Eastside Softwash | Built for results, backed by trust.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Donation progress
+        const donationsRaised = 0;
+        const donationGoal = 1000;
+        const percent = Math.min((donationsRaised / donationGoal) * 100, 100);
+        document.getElementById("progressBar").style.width = percent + "%";
+
+        // Form validation
+        document.querySelector("form").addEventListener("submit", function(e) {
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const message = document.getElementById("message").value.trim();
+
+            if (!name || !email || !message) {
+                alert("Please fill out all required fields before submitting.");
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,1 +1,109 @@
-<html><head><title>Donation</title></head><body><h1>Donation Page</h1></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - Eastside Softwash</title>
+    <meta name="description" content="Support our mission to give back to the community. 5% of all profits are donated to local animal shelters.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="donation-bar">
+        💰 Donations Raised: $0 / $1000
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo-text">
+                EASTSIDE<br>SOFTWASH
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="donation.html" class="active">Donations</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="content">
+        <h1>Support Our Cause</h1>
+        <p>We donate 5% of all profits to local animal shelters. If you'd like to contribute directly to our donation fund, please use the form below. Every dollar helps us give back to the community.</p>
+
+        <div class="services-grid">
+            <div class="service-card-item">
+                <div class="icon"><i class="fa-solid fa-heart"></i></div>
+                <h3>Community Impact</h3>
+                <p>5% of all our profits go directly to local animal shelters with proof provided to clients.</p>
+            </div>
+            <div class="service-card-item">
+                <div class="icon"><i class="fa-solid fa-paw"></i></div>
+                <h3>Animal Welfare</h3>
+                <p>Supporting local animal shelters and rescue organizations in our community.</p>
+            </div>
+            <div class="service-card-item">
+                <div class="icon"><i class="fa-solid fa-receipt"></i></div>
+                <h3>Transparency</h3>
+                <p>Every client receives email proof of our charitable donations after each service.</p>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <h2>Make a Direct Donation</h2>
+            <form action="https://formsubmit.co/eastsidesoftscrub@gmail.com" method="POST">
+                <label for="donor-name">Your Name</label>
+                <input type="text" id="donor-name" name="name" placeholder="Your Name" required>
+
+                <label for="donor-email">Your Email</label>
+                <input type="email" id="donor-email" name="email" placeholder="Your Email" required>
+
+                <label for="donation-amount">Donation Amount (USD)</label>
+                <input type="number" id="donation-amount" name="donation" placeholder="Enter amount" min="1" required>
+
+                <label for="donation-message">Message (Optional)</label>
+                <textarea id="donation-message" name="message" rows="4" placeholder="Any message you'd like to include..."></textarea>
+
+                <input type="hidden" name="form" value="donation">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://eastside-softwash.github.io/donation.html?thank-you=true">
+
+                <button type="submit">Submit Donation</button>
+            </form>
+        </div>
+
+        <div style="background: var(--white-bg); padding: 2rem; border-radius: 8px; box-shadow: var(--shadow-medium); margin-top: 2rem; text-align: center;">
+            <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">Our Mission</h3>
+            <p>As an owner-operated exterior cleaning company, our mission extends beyond providing quality service. We believe in making our communities better places, one job at a time. After every service, you'll receive an email showing our donation to local charities as part of our commitment to giving back.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Eastside Softwash | Built for results, backed by trust.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Donation progress
+        const donationsRaised = 0;
+        const donationGoal = 1000;
+        const percent = Math.min((donationsRaised / donationGoal) * 100, 100);
+        document.getElementById("progressBar").style.width = percent + "%";
+
+        // Check for thank you parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('thank-you') === 'true') {
+            alert('Thank you for your donation! Your contribution helps us support local animal shelters.');
+        }
+    </script>
+</body>
+</html>

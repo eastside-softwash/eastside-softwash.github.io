@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eastside Softwash - Professional Exterior Cleaning</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Professional exterior cleaning services in Greater Seattle, specializing in roof, window, and gutter cleaning. Free estimates.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -16,25 +18,84 @@
     </div>
 
     <header>
-        <div class="logo-text">Eastside Softwash</div>
-        <nav>
-            <a href="index.html" class="active">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="services.html">Services</a>
-            <a href="contact.html">Contact</a>
-            <a href="donation.html">Donations</a>
-        </nav>
+        <div class="container header-container">
+            <a href="index.html" class="logo-text">
+                EASTSIDE<br>SOFTWASH
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="donation.html">Donations</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <h1>Professional Exterior Cleaning Services</h1>
-            <p>Serving Redmond and surrounding areas with quality softwashing services</p>
-        </section>
-    </main>
+    <section class="hero">
+        <div class="video-background"></div>
+        <div class="container hero-content">
+            <h1>PROFESSIONAL ROOF, WINDOW & GUTTER CLEANING</h1>
+            <p>GREATER SEATTLE AREA</p>
+            <div class="hero-buttons">
+                <a href="contact.html" class="btn primary">FREE ESTIMATE</a>
+                <a href="tel:1111111111" class="btn secondary">Call Us</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="content">
+        <h1>5 Star Exterior Cleaning Services</h1>
+        <p>We provide professional services including Soft Washing, Pressure Washing, Solar Panel Cleaning, Window Cleaning, and Gutter Cleaning throughout the Greater Seattle area.</p>
+        
+        <div class="services-grid">
+            <div class="service-card-item">
+                <div class="icon"><i class="fa-solid fa-house-chimney-crack"></i></div>
+                <h3>Soft Washing</h3>
+                <p>Gentle, low-pressure cleaning for roofs, siding, and delicate surfaces to remove organic growth.</p>
+            </div>
+            <div class="service-card-item">
+                <div class="icon"><i class="fa-solid fa-trash-can"></i></div>
+                <h3>Gutter Cleaning</h3>
+                <p>Clear gutters of leaves and debris, ensuring proper water flow and preventing costly damage.</p>
+            </div>
+            <div class="service-card-item">
+                <div class="icon"><i class="fa-solid fa-solar-panel"></i></div>
+                <h3>Solar Panel Cleaning</h3>
+                <p>Maximize energy efficiency by cleaning your solar panels, removing dirt and grime buildup.</p>
+            </div>
+            <div class="service-card-item">
+                <div class="icon"><i class="fa-solid fa-window-restore"></i></div>
+                <h3>Window Cleaning</h3>
+                <p>Achieve streak-free, sparkling windows with our professional cleaning techniques.</p>
+            </div>
+            <div class="service-card-item">
+                <div class="icon"><i class="fa-solid fa-spray-can"></i></div>
+                <h3>Pressure Washing</h3>
+                <p>Restore the beauty of your driveways, sidewalks, and patios with powerful cleaning.</p>
+            </div>
+        </div>
+        
+        <p style="text-align: center; margin-top: 2rem;">
+            <strong>We proudly serve Redmond and the surrounding area, delivering real, visible results through affordable power washing services. We also give back — 5% of all profit is donated to local animal shelters.</strong>
+        </p>
+    </section>
 
     <footer>
-        <p>&copy; 2025 Eastside Softwash | Built for results, backed by trust.</p>
+        <div class="container">
+            <p>&copy; 2025 Eastside Softwash | Built for results, backed by trust.</p>
+        </div>
     </footer>
+
+    <script>
+        // Donation progress
+        const donationsRaised = 0;
+        const donationGoal = 1000;
+        const percent = Math.min((donationsRaised / donationGoal) * 100, 100);
+        document.getElementById("progressBar").style.width = percent + "%";
+    </script>
 </body>
 </html>
