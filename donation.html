@@ -1,1 +1,127 @@
-<html><head><title>Donation</title></head><body><h1>Donation Page</h1></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donations - Eastside Softwash</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="donation-bar">
+        💰 Donations Raised: $0 / $1000
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+    </div>
+
+    <header>
+        <div class="logo-text">Eastside Softwash</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="donation.html" class="active">Donations</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Support Our Community</h1>
+            <p>Help us give back to the Redmond community through our donation program</p>
+        </section>
+
+        <section class="about-section">
+            <h2>Community Support Initiative</h2>
+            
+            <div class="donation-banner">
+                <h3>🎯 Our Goal: $1,000</h3>
+                <div class="progress-container" style="margin: 1rem 0; background: #fff; height: 20px; border-radius: 10px; overflow: hidden;">
+                    <div class="progress-bar" id="mainProgressBar" style="background: var(--primary); height: 100%; width: 0%; transition: width 0.3s ease;"></div>
+                </div>
+                <p><strong>Current Progress: $<span id="currentAmount">0</span> raised</strong></p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🤝 Why We Give Back</h3>
+                <p>At Eastside Softwash, we believe in supporting the community that supports us. Your donations help us contribute to local charities, community events, and families in need throughout the Redmond area.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>💖 How Your Donation Helps</h3>
+                <ul style="text-align: left; margin-top: 1rem;">
+                    <li>Support local families in need</li>
+                    <li>Sponsor community events and activities</li>
+                    <li>Contribute to local schools and youth programs</li>
+                    <li>Help maintain community spaces</li>
+                    <li>Support local environmental initiatives</li>
+                </ul>
+            </div>
+
+            <form class="form">
+                <h3 style="color: var(--primary); margin-bottom: 1.5rem;">Make a Donation</h3>
+                
+                <label for="donor-name">Your Name (Optional)</label>
+                <input type="text" id="donor-name" name="donor-name" placeholder="Anonymous">
+
+                <label for="donor-email">Email Address (Optional)</label>
+                <input type="email" id="donor-email" name="donor-email" placeholder="For donation receipt">
+
+                <label for="amount">Donation Amount *</label>
+                <select id="amount" name="amount" required style="width: 100%; padding: 0.75rem; margin-bottom: 1.5rem; border: 1px solid var(--gray); border-radius: 5px; font-size: 1rem;">
+                    <option value="">Select an amount...</option>
+                    <option value="25">$25</option>
+                    <option value="50">$50</option>
+                    <option value="100">$100</option>
+                    <option value="250">$250</option>
+                    <option value="custom">Custom Amount</option>
+                </select>
+
+                <input type="number" id="custom-amount" name="custom-amount" placeholder="Enter custom amount" style="display: none; width: 100%; padding: 0.75rem; margin-bottom: 1.5rem; border: 1px solid var(--gray); border-radius: 5px; font-size: 1rem;">
+
+                <label for="message">Message (Optional)</label>
+                <textarea id="message" name="message" rows="3" placeholder="Leave a message of support..."></textarea>
+
+                <button type="submit">Donate Now</button>
+            </form>
+
+            <div class="highlight">
+                <p><strong>🔒 Secure Donations:</strong> All donations are processed securely. Thank you for supporting our community!</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Eastside Softwash | Built for results, backed by trust.</p>
+    </footer>
+
+    <script>
+        // Simple donation tracking functionality
+        document.getElementById('amount').addEventListener('change', function() {
+            const customAmountField = document.getElementById('custom-amount');
+            if (this.value === 'custom') {
+                customAmountField.style.display = 'block';
+                customAmountField.required = true;
+            } else {
+                customAmountField.style.display = 'none';
+                customAmountField.required = false;
+            }
+        });
+
+        // Update progress bar (this would typically connect to a payment processor)
+        function updateProgress() {
+            const currentAmount = localStorage.getItem('donationAmount') || 0;
+            const goal = 1000;
+            const percentage = Math.min((currentAmount / goal) * 100, 100);
+            
+            document.getElementById('currentAmount').textContent = currentAmount;
+            document.getElementById('mainProgressBar').style.width = percentage + '%';
+            document.getElementById('progressBar').style.width = percentage + '%';
+        }
+
+        // Initialize progress on page load
+        updateProgress();
+    </script>
+</body>
+</html>
