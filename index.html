@@ -1,81 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Choose your softwash service type. Eastside Softwash delivers premium commercial and residential exterior cleaning." />
-  <title>Eastside Softwash</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      text-align: center;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    h1 {
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
-      letter-spacing: 1px;
-    }
-
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-    }
-
-    .button-container {
-      display: flex;
-      gap: 30px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .option-button {
-      background: rgba(255, 255, 255, 0.1);
-      border: 2px solid #00ffff;
-      color: #00ffff;
-      padding: 1rem 2rem;
-      text-decoration: none;
-      font-size: 1.2rem;
-      border-radius: 10px;
-      transition: all 0.3s ease;
-    }
-
-    .option-button:hover {
-      background-color: #00ffff;
-      color: #001f2f;
-      box-shadow: 0 0 15px #00ffff;
-    }
-
-    @media (max-width: 600px) {
-      .button-container {
-        flex-direction: column;
-        gap: 15px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eastside Softwash - Professional Exterior Cleaning</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <h1>Welcome to Eastside Softwash</h1>
-  <p>Select your service type to continue</p>
-  <div class="button-container">
-    <a href="commercial/com_home.html" class="option-button" aria-label="Commercial Services">Commercial</a>
-    <a href="residential/res_home.html" class="option-button" aria-label="Residential Services">Residential</a>
-  </div>
+    <div class="donation-bar">
+        💰 Donations Raised: $0 / $1000
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+    </div>
+
+    <header>
+        <div class="logo-text">Eastside Softwash</div>
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="donation.html">Donations</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Professional Exterior Cleaning Services</h1>
+            <p>Serving Redmond and surrounding areas with quality softwashing services</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Eastside Softwash | Built for results, backed by trust.</p>
+    </footer>
 </body>
 </html>
