@@ -1,1 +1,250 @@
-<html><head><title>Donation</title></head><body><h1>Donation Page</h1></body></html>
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Donations - Eastside Softwash</title>
+    <meta name="description" content="Support Eastside Softwash's community initiatives. Help us give back to the Greater Seattle Area community.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="donation-bar">
+        💰 Donations Raised: $<span id="donationAmount">0</span> / $1000
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+    </div>
+
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-contact-info">
+                <span>Call today for a free estimate | Phone (111) 111-1111</span>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container header-container">
+            <div class="logo-and-back-button">
+                <a href="index.html" class="logo">
+                    <div class="logo-text">
+                        EASTSIDE<br>SOFTWASH
+                    </div>
+                </a>
+            </div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+                <a href="donation.html" class="active">Donations</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="video-background"></div>
+
+        <div class="container hero-content">
+            <h1>COMMUNITY SUPPORT</h1>
+            <p>GIVING BACK TO OUR COMMUNITY</p>
+            <div class="hero-buttons">
+                <a href="#donate" class="btn primary">Make a Donation</a>
+                <a href="contact.html" class="btn secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-details-section">
+        <div class="container">
+            <h2>Supporting Our Community</h2>
+            <p>At Eastside Softwash, we believe in giving back to the community that has supported our business. Our donation program helps fund local community initiatives, environmental conservation efforts, and support for families in need.</p>
+
+            <div class="benefits">
+                <div class="benefit-card">
+                    <h3>Environmental Conservation</h3>
+                    <p>Supporting local environmental cleanup efforts and conservation programs that protect the natural beauty of the Pacific Northwest.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Community Programs</h3>
+                    <p>Funding local community centers, youth programs, and initiatives that strengthen our Greater Seattle Area neighborhoods.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Emergency Relief</h3>
+                    <p>Providing assistance to families and individuals facing unexpected hardships or emergency situations in our local community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="our-services-section" id="donate">
+        <div class="container">
+            <h2>Current Donation Goal</h2>
+            <div style="text-align: center; margin-bottom: 40px;">
+                <div style="background: var(--light-bg); padding: 30px; border-radius: 8px; box-shadow: var(--shadow-medium); max-width: 500px; margin: 0 auto;">
+                    <h3 style="color: var(--dark-blue); margin-bottom: 20px;">Winter Community Support Fund</h3>
+                    <div style="font-size: 24px; font-weight: 600; color: var(--accent-green); margin-bottom: 15px;">
+                        $<span id="currentAmount">0</span> raised of $1,000 goal
+                    </div>
+                    <div style="width: 100%; height: 20px; background-color: rgba(23, 161, 142, 0.2); border-radius: 10px; overflow: hidden; margin-bottom: 20px;">
+                        <div id="mainProgressBar" style="height: 100%; background-color: var(--accent-green); width: 0%; transition: width 0.3s ease; border-radius: 10px;"></div>
+                    </div>
+                    <p style="margin-bottom: 20px;">Help us support local families with heating assistance and winter essentials during the cold months.</p>
+                </div>
+            </div>
+
+            <div class="services-grid" style="max-width: 600px; margin: 0 auto;">
+                <div class="service-card-item" onclick="makeDonation(25)" style="cursor: pointer;">
+                    <div class="icon"><i class="fa-solid fa-heart"></i></div>
+                    <h3>$25</h3>
+                    <p>Provides a warm meal for a family in need</p>
+                </div>
+                <div class="service-card-item" onclick="makeDonation(50)" style="cursor: pointer;">
+                    <div class="icon"><i class="fa-solid fa-home"></i></div>
+                    <h3>$50</h3>
+                    <p>Helps with heating costs for one week</p>
+                </div>
+                <div class="service-card-item" onclick="makeDonation(100)" style="cursor: pointer;">
+                    <div class="icon"><i class="fa-solid fa-handshake"></i></div>
+                    <h3>$100</h3>
+                    <p>Provides winter clothing and essentials</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <h3 style="color: var(--dark-blue); margin-bottom: 20px;">Custom Amount</h3>
+                <div style="max-width: 400px; margin: 0 auto;">
+                    <input type="number" id="customAmount" placeholder="Enter amount" min="1" style="width: 200px; padding: 10px; border: 1px solid var(--card-border); border-radius: 5px; margin-right: 10px; font-size: 16px;">
+                    <button onclick="makeDonation()" style="padding: 10px 20px; background-color: var(--accent-green); color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: 600;">Donate</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-section">
+        <div class="container">
+            <h2>How Your Donation Helps</h2>
+
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Direct Impact</h3>
+                    <p>100% of donations go directly to community support programs with no administrative fees</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Local Focus</h3>
+                    <p>All funds support families and initiatives within the Greater Seattle Area community</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Transparency</h3>
+                    <p>Regular updates on how donations are used and the impact they're making in our community</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Gratitude</h3>
+                    <p>Every donor receives a thank you and update on the positive impact of their contribution</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <h2>Donation FAQs</h2>
+
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-title">How are donations used?</div>
+                    <div class="accordion-content">
+                        <p>All donations go directly to support local community initiatives including emergency assistance, environmental conservation, and community programs. We provide regular updates on how funds are distributed.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-title">Are donations tax-deductible?</div>
+                    <div class="accordion-content">
+                        <p>Please consult with your tax advisor regarding the deductibility of donations. We can provide documentation of your contribution for your records.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-title">Can I specify how my donation is used?</div>
+                    <div class="accordion-content">
+                        <p>Yes, if you have a specific preference for how your donation should be used (environmental, emergency relief, etc.), please contact us and we'll do our best to honor your request.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-title">How will I know my donation made a difference?</div>
+                    <div class="accordion-content">
+                        <p>We send quarterly updates to all donors showing the impact of contributions, including stories from community members who have been helped and environmental projects supported.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Thank You for Your Support</h2>
+            <p>Every donation, no matter the size, makes a real difference in our community</p>
+            <a href="contact.html" class="btn">Contact Us</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Eastside Softwash. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Donation tracking
+        let totalDonations = 0;
+        const donationGoal = 1000;
+
+        function updateProgressBars() {
+            const percentage = (totalDonations / donationGoal) * 100;
+            document.getElementById('progressBar').style.width = percentage + '%';
+            document.getElementById('mainProgressBar').style.width = percentage + '%';
+            document.getElementById('donationAmount').textContent = totalDonations;
+            document.getElementById('currentAmount').textContent = totalDonations;
+        }
+
+        function makeDonation(amount) {
+            if (!amount) {
+                amount = parseInt(document.getElementById('customAmount').value);
+                if (!amount || amount < 1) {
+                    alert('Please enter a valid donation amount.');
+                    return;
+                }
+            }
+            
+            totalDonations += amount;
+            updateProgressBars();
+            
+            alert(`Thank you for your $${amount} donation! Your contribution helps make a real difference in our community.`);
+            
+            // Clear custom amount input
+            document.getElementById('customAmount').value = '';
+        }
+
+        // Accordion functionality
+        document.querySelectorAll('.accordion-title').forEach(title => {
+            title.addEventListener('click', () => {
+                const item = title.parentNode;
+                item.classList.toggle('active');
+            });
+        });
+
+        // Initialize progress bars
+        document.addEventListener('DOMContentLoaded', function() {
+            updateProgressBars();
+        });
+    </script>
+</body>
+</html>
