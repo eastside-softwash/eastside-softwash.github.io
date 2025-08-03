@@ -40,7 +40,7 @@
         
         <div class="contact-form">
             <h2>Request a Free Estimate</h2>
-            <form>
+            <form action="https://formsubmit.co/info@eastside-softwash.com" method="POST">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required />
 
@@ -63,6 +63,10 @@
 
                 <label for="message">Message</label>
                 <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..."></textarea>
+
+                <input type="hidden" name="_next" value="https://eastside-softwash.github.io/thankyou.html">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="New Contact Form Submission">
 
                 <button type="submit">Send Message</button>
             </form>
