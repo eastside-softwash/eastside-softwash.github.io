@@ -1,22 +1,570 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Commercial Exterior Cleaning – Eastside Softwash</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <meta name="description" content="Professional commercial exterior cleaning services in Greater Seattle, specializing in soft washing, pressure washing, and building maintenance. Free estimates.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        /* General Styles */
-        body {
-            margin: 0;
-            font-family: 'Open Sans', Arial, sans-serif;
-            background-color: #0d1a26; /* Dark muted blue-green */
-            color: #f0f0f0;
-            line-height: 1.6;
-            scroll-behavior: smooth;
+        :root {
+            /* Primary Brand Colors */
+            --primary-blue: #0A60B4; /* Used for buttons, hover, accents */
+            --dark-blue: #00478F; /* Top bar background, darker hover */
+            --logo-dark-blue: #0E385F; /* Darker blue for logo */
+            --accent-green: #17A18E; /* Primary button background */
+
+            /* Text Colors */
+            --dark-text: #333;
+            --medium-text: #555;
+            --light-text: #E0E0E0; /* For top bar text */
+            --white-text: #FFFFFF;
+
+            /* Background Colors */
+            --light-bg: #F8F8F8; /* Light section background, overall page */
+            --white-bg: #FFFFFF; /* Header, card background */
+            --hero-overlay-start: rgba(0, 0, 0, 0.4);
+            --hero-overlay-end: rgba(0, 0, 0, 0.6);
+
+            /* Borders/Shadows */
+            --card-border: #E0E0E0;
+            --shadow-light: 0 2px 5px rgba(0,0,0,0.05);
+            --shadow-medium: 0 4px 15px rgba(0,0,0,0.08);
+            --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
         }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            color: var(--medium-text);
+            font-size: 18px;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: var(--light-bg); /* Overall page background */
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: var(--dark-blue);
+            color: var(--light-text);
+            padding: 10px 0;
+            font-size: 14px;
+        }
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        .top-bar-contact-info {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .top-bar-contact-info a {
+            color: var(--light-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .top-bar-contact-info a:hover {
+            color: var(--primary-blue);
+        }
+        .top-bar-contact-info i {
+            margin-right: 5px;
+        }
+
+        /* Back Button Specific Styles */
+        .back-button {
+            color: var(--light-text);
+            text-decoration: none;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s ease;
+        }
+        .back-button:hover {
+            color: var(--primary-blue);
+        }
+        .back-button i {
+            margin-right: 0;
+        }
+
+        /* Header */
+        header.main-header {
+            background-color: var(--white-bg);
+            padding: 15px 0;
+            box-shadow: var(--shadow-light);
+            position: relative;
+            z-index: 10;
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-and-back-button {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--logo-dark-blue);
+            margin-bottom: 0px;
+        }
+        .logo img {
+            height: 60px;
+            margin-right: 10px;
+        }
+        .logo-text {
+            font-size: 24px;
+            font-weight: 800;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+        .logo-text span {
+            display: block;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--medium-text);
+            text-transform: none;
+        }
+        .back-button-header {
+            display: none;
+            width: 100%;
+            text-align: left;
+            margin-top: 5px;
+        }
+        .back-button-header .back-button {
+            color: var(--dark-blue);
+            font-size: 16px;
+        }
+        .back-button-header .back-button:hover {
+            color: var(--primary-blue);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+        }
+        nav ul li {
+            margin-left: 30px;
+            position: relative;
+        }
+        nav ul li:first-child {
+            margin-left: 0;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.3s ease;
+            padding-bottom: 5px;
+            position: relative;
+            display: inline-block;
+        }
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--primary-blue);
+        }
+        nav ul li a.active::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-blue);
+        }
+        .nav-button {
+            background-color: var(--primary-blue);
+            color: var(--white-text);
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-left: 15px;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .nav-button:hover {
+            background-color: var(--dark-blue);
+        }
+
+        /* Dropdown Menu Styles */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: var(--white-bg);
+            min-width: 180px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 100;
+            list-style: none;
+            padding: 10px 0;
+            border-radius: 5px;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .dropdown-menu li a {
+            color: var(--dark-text);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        .dropdown-menu li a:hover {
+            background-color: #f1f1f1;
+            color: var(--primary-blue);
+        }
+
+        nav ul li.dropdown:hover .dropdown-menu {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white-text);
+            text-align: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-green));
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, var(--hero-overlay-start) 0%, var(--hero-overlay-end) 100%);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .btn {
+            background-color: var(--accent-green);
+            color: var(--white-text);
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .btn:hover {
+            background-color: #148f7d;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h2 {
+            font-size: 42px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--dark-blue);
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--dark-blue);
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* Features Section */
+        .features ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .features ul li {
+            background-color: var(--white-bg);
+            padding: 30px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 500;
+            box-shadow: var(--shadow-medium);
+            border: 1px solid var(--card-border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .features ul li:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Service Cards */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background-color: var(--white-bg);
+            padding: 35px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--shadow-medium);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--card-border);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--dark-blue);
+        }
+
+        .service-card p {
+            font-size: 16px;
+            margin-bottom: 25px;
+            line-height: 1.6;
+            color: var(--medium-text);
+        }
+
+        .service-card a {
+            color: var(--primary-blue);
+            font-weight: 600;
+            text-decoration: none;
+            border: 2px solid var(--primary-blue);
+            padding: 12px 25px;
+            border-radius: 30px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .service-card a:hover {
+            background-color: var(--primary-blue);
+            color: var(--white-text);
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            background-color: var(--white-bg);
+            margin-bottom: 18px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+            border: 1px solid var(--card-border);
+        }
+
+        .faq-question {
+            padding: 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 18px;
+            color: var(--dark-blue);
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background-color: var(--light-bg);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--accent-green);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            padding: 0 25px 25px 25px;
+            display: none;
+            color: var(--medium-text);
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background-color: var(--dark-blue);
+            color: var(--white-text);
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .cta-section h2 {
+            color: var(--white-text);
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 767px) {
+            .top-bar-content {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            .top-bar-contact-info {
+                justify-content: center;
+                flex-wrap: wrap;
+                width: 100%;
+            }
+            .back-button {
+                width: 100%;
+                justify-content: center;
+                margin-bottom: 10px;
+            }
+            .header-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .logo-and-back-button {
+                align-items: center;
+                width: 100%;
+            }
+            .logo {
+                margin-bottom: 15px;
+            }
+            .back-button-header {
+                display: block;
+                margin-top: 0;
+                text-align: center;
+            }
+            .back-button-header .back-button {
+                color: var(--dark-blue);
+                font-size: 18px;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-top: 15px;
+            }
+            nav ul li {
+                margin: 5px 10px;
+            }
+            .nav-button {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+
+            .hero {
+                min-height: 400px;
+                padding: 40px 0;
+            }
+            .hero h1 {
+                font-size: 36px;
+            }
+            .hero p {
+                font-size: 20px;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+            
+            .features ul, .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 
         h1, h2, h3 {
             font-family: 'Montserrat', sans-serif;
@@ -545,18 +1093,66 @@
     </style>
 </head>
 <body>
-
-    <div class="top-back-button-container">
-        <a href="../index.html" class="top-back-button">← Back to Home</a>
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-contact-info">
+                <span><i class="fas fa-phone"></i> (425) 299-2669</span>
+                <span><i class="fas fa-envelope"></i> eastsideexteriorwash@gmail.com</span>
+            </div>
+            <div class="back-button-container">
+                <a href="/index.html" class="back-button">← Back to Home</a>
+            </div>
+        </div>
     </div>
-
-    <header class="hero">
-        <h1>Premier Commercial Exterior Cleaning for Washington Businesses</h1>
-        <p>Enhance your business's appeal and preserve your investment. Eastside Softwash provides professional, comprehensive exterior cleaning solutions for commercial properties across Washington.</p>
-        <a href="#contact" class="cta-button">Request Your Commercial Quote</a>
+    
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="/images/logo.png" alt="Eastside Softwash Logo">
+                    <h1>Eastside Softwash</h1>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#">Residential <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/residential/res_home.html">Overview</a></li>
+                                <li><a href="/residential/house_washing.html">House Washing</a></li>
+                                <li><a href="/residential/roof_cleaning.html">Roof Cleaning</a></li>
+                                <li><a href="/residential/driveway_cleaning.html">Driveway Cleaning</a></li>
+                                <li><a href="/residential/deck_cleaning.html">Deck Cleaning</a></li>
+                                <li><a href="/residential/gutter_cleaning.html">Gutter Cleaning</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="active">Commercial <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/commercial/com_home.html">Overview</a></li>
+                                <li><a href="/commercial/softwash.html">Soft Washing</a></li>
+                                <li><a href="/commercial/pressurewashing.html">Power Washing</a></li>
+                                <li><a href="/commercial/building.html">Building Cleaning</a></li>
+                                <li><a href="/commercial/windowcleaning.html">Window Cleaning</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </header>
 
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Premier Commercial Exterior Cleaning for Washington Businesses</h1>
+            <p>Enhance your business's appeal and preserve your investment. Eastside Softwash provides professional, comprehensive exterior cleaning solutions for commercial properties across Washington.</p>
+            <a href="#contact" class="btn">Request Your Commercial Quote</a>
+        </div>
+    </section>
+
     <section class="features">
+        <div class="section-container">
         <h2>Why Washington Businesses Partner with Eastside Softwash</h2>
         <ul>
             <li>**Licensed & Insured Expertise**: We are fully licensed and insured, offering you complete peace of mind and reliable service.</li>
@@ -566,47 +1162,49 @@
             <li>**Local Knowledge & Dedicated Service**: As a local Washington business, we understand the specific challenges and maintenance needs of commercial properties in our state.</li>
             <li>**Protective & Restorative Cleaning**: Our methods not only clean thoroughly but also help protect and extend the lifespan of your property's exterior surfaces.</li>
         </ul>
+        </div>
     </section>
-
-    <hr>
 
     <section class="services-grid">
+        <div class="section-container">
         <h2>Our Comprehensive Commercial Exterior Cleaning Services</h2>
-        <div class="service-card">
-            <h3>Soft Washing</h3>
-            <p>A low-pressure cleaning method, ideal for safely removing organic growth and discoloration from delicate surfaces like stucco, EIFS, and painted exteriors.</p>
-            <a href="/commercial/softwash.html">Learn More</a>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Soft Washing</h3>
+                <p>A low-pressure cleaning method, ideal for safely removing organic growth and discoloration from delicate surfaces like stucco, EIFS, and painted exteriors.</p>
+                <a href="/commercial/softwash.html">Learn More</a>
+            </div>
+            <div class="service-card">
+                <h3>Pressure Washing</h3>
+                <p>High-pressure cleaning for robust surfaces such as concrete, brick, and paving, effectively eliminating tough dirt, oil stains, and graffiti.</p>
+                <a href="/commercial/pressurewashing.html">Learn More</a>
+            </div>
+            <div class="service-card">
+                <h3>Window Cleaning</h3>
+                <p>Achieve spotless, streak-free windows that enhance your property's appearance and maximize natural light within your commercial space.</p>
+                <a href="/commercial/windowcleaning.html">Learn More</a>
+            </div>
+            <div class="service-card">
+                <h3>Gutter Maintenance</h3>
+                <p>Essential services to prevent water damage and ensure efficient drainage, protecting your building's foundation and structural integrity.</p>
+                <a href="/commercial/guttermaintenance.html">Learn More</a>
+            </div>
+            <div class="service-card">
+                <h3>Solar Panel Cleaning</h3>
+                <p>Specialized cleaning to remove efficiency-reducing contaminants from solar panels, ensuring peak energy production and return on investment.</p>
+                <a href="/commercial/solarpanelcleaning.html">Learn More</a>
+            </div>
+            <div class="service-card">
+                <h3>Building & Storefront Facade Cleaning</h3>
+                <p>Comprehensive cleaning for your entire commercial facade, from retail entrances to office exteriors, projecting a professional and inviting image.</p>
+                <a href="/commercial/building.html">Learn More</a>
+            </div>
         </div>
-        <div class="service-card">
-            <h3>Pressure Washing</h3>
-            <p>High-pressure cleaning for robust surfaces such as concrete, brick, and paving, effectively eliminating tough dirt, oil stains, and graffiti.</p>
-            <a href="/commercial/pressurewashing.html">Learn More</a>
-        </div>
-        <div class="service-card">
-            <h3>Window Cleaning</h3>
-            <p>Achieve spotless, streak-free windows that enhance your property's appearance and maximize natural light within your commercial space.</p>
-            <a href="/commercial/windowcleaning.html">Learn More</a>
-        </div>
-        <div class="service-card">
-            <h3>Gutter Maintenance</h3>
-            <p>Essential services to prevent water damage and ensure efficient drainage, protecting your building's foundation and structural integrity.</p>
-            <a href="/commercial/guttermaintenance.html">Learn More</a>
-        </div>
-        <div class="service-card">
-            <h3>Solar Panel Cleaning</h3>
-            <p>Specialized cleaning to remove efficiency-reducing contaminants from solar panels, ensuring peak energy production and return on investment.</p>
-            <a href="/commercial/solarpanelcleaning.html">Learn More</a>
-        </div>
-        <div class="service-card">
-            <h3>Building & Storefront Facade Cleaning</h3>
-            <p>Comprehensive cleaning for your entire commercial facade, from retail entrances to office exteriors, projecting a professional and inviting image.</p>
-            <a href="/commercial/building.html">Learn More</a>
         </div>
     </section>
 
-    <hr>
-
     <section class="property-types">
+        <div class="section-container">
         <h2>Commercial Properties We Service Across Washington</h2>
         <p>Eastside Softwash is equipped to provide expert exterior cleaning for a diverse range of commercial properties throughout Washington State:</p>
         <ul>
@@ -621,11 +1219,11 @@
             <li>Automotive Dealerships & Service Centers</li>
             <li>Government & Public Sector Buildings</li>
         </ul>
+        </div>
     </section>
 
-    <hr>
-
     <section class="gallery">
+        <div class="section-container">
         <h2>Our Commercial Project Portfolio</h2>
         <p>Witness the significant impact Eastside Softwash achieves for businesses throughout Washington.</p>
         <div class="gallery-grid">
